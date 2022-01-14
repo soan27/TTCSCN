@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Orfarm Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/home.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/phu.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
+
+
+        <!-- Bootstrap CSS -->
+        <!--====== Favicon Icon ======-->
+
+        <link rel="shortcut icon" th:src="@{/assets/images/favicon.png}" type="image/png">
+
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+
+        <!--====== Fontawesome css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/animate.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/magnific-popup.css}">
+
+        <!--====== Slick css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/slick.css}">
+
+        <!--====== Default css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/custom-animation.css}">
+        <link rel="stylesheet" th:href="@{/assets/css/default.css}">
+
+        <!--====== Style css ======-->
+        <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <body>
+
+        <header class="header"th:replace="header :: myheader"></header>
+
+        <section class="breadcrum">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb container">
+                    <li class="breadcrumb-item"><a href="./index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Xem giỏ hàng</li>
+                </ol>
+            </nav>
+        </section>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 mt-70 mb-50">
+                        <div class="common-view-cart pt-4 pb-4">
+                            <p class="text-cart  mb-0 ">Giỏ hàng</p>
+                        </div>
+                        <div class="displayProduct row pt-3 pb-3">
+                            <ul id="mainCart">
+
+                            </ul>
+                            <div class="cart-link row pt-3 pb-3 " style="width: 835px;">
+                                <a href="" class="mr-200 pl-5">Tiếp tục mua hàng</a>
+                                <a href="#" class="delete">Xóa tất cả</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 box-fee mt-70 mb-50 pt-3">
+                        <div class="immidiate-fee ">
+                            Tạm tính: <span class="prices">0</span> <sup>đ</sup>
+                        </div>
+
+                        <div class="shipping-fee pt-4">
+                            <p>Phí ship: <span class="prices">0</span> <sup>đ</sup></p>
+
+                            <p class="pt-2" ><Strong style="color: brown;">Ưu đãi từ cửa hàng:</Strong> OrFarm hỗ trợ
+                                khách hàng miễn phí vận chuyển với những đơn hàng có giá trị từ 50.000đ trở lên.
+                            </p>
+                        </div>
+                        <div class="immidiate-fee sum-fee" style="color: rgb(49, 189, 21);">
+                            Tổng tiền: <span class="prices">0 </span> <sup>đ</sup>
+                        </div>
+                        <div class="payment">
+                            <a href="/payment" class="pt-50 pl-50">Tiến hành thanh toán</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div>
+            <footer th:replace="footer :: myfooter"></footer>
+        </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--====== jquery js ======-->
+    <script th:src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script th:src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+    <script th:src="@{/assets/js/popper.min.js}"></script>
+
+
+    <!--====== wow js ======-->
+    <script th:src="@{/assets/js/wow.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script th:src="@{/assets/js/jquery.counterup.min.js}"></script>
+    <script th:src="@{/assets/js/waypoints.min.js}"></script>
+
+    <!--====== TweenMax js ======-->
+    <script th:src="@{/assets/js/TweenMax.min.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script th:src="@{/assets/js/slick.min.js}"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script th:src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+
+    <!--====== Main js ======-->
+    <script  type="text/javascript"  th:src="@{/main.js}"></script>
+    <!--<script th:src="@{/assets/main.js}"></script>-->
+
+    <script th:src="@{/cart.js}"></script>
+    <script type="text/javascript">
+        window.onload = function ()
+        {
+            showProduct();
+        
+            immidiateSum();
+        };
+
+
+    </script>
+</html>

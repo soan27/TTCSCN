@@ -1,0 +1,277 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 22, 2021, 3:22:29 PM
+    Author     : Hoang Xoan
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 16, 2021, 10:56:31 AM
+    Author     : Hoang Xoan
+*/
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+.header{
+    background-color: white;
+    padding-bottom: 10px;
+}
+img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.carousel-item img{
+    background-size: cover;
+}
+.fixed-top{
+    background-color: white;
+}
+.banner-content {
+    position: absolute;
+    bottom: 50%;
+    width: 50%;
+    transform: translateY(50%);
+    left: 30px;
+}
+.banner-hover{
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    background-size: cover;
+}
+.lazyloaded{
+    transition: transform 8s cubic-bezier(0.25, 0.46, 0.);
+    -webkit-transition-duration: 2s;
+}
+.lazyloaded:hover{
+    width: 100% !important;
+    transform: scale(1.2);
+
+}
+
+.category{
+    background-color:#ffffff; 
+    padding: 30px;
+}
+.cate-slider{
+width: 100%;
+}
+.cate-slider.category{
+    display: inline;
+}
+
+.title{
+    text-align: center;
+    margin-bottom: 50px
+}
+.card-img-top{
+    height: 250px; 
+    width: 250px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.product-slider{
+    width: 100%;
+}
+.slick-arrow{
+    display: none !important;
+}
+.bg-ban{
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.banner-bot{
+    display: block;
+    position: relative;
+    background-attachment: fixed;
+    background-image: url("https://cdn.shopify.com/s/files/1/0412/8151/9765/files/dealbanner-min.jpg?v=1593257102");
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.banner-bot .section-title{
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 20%;
+}
+
+
+
+.gallery {
+    padding: 60px 0px 30px 0px;
+    margin-top: 90px;
+    background-color: #f4f4f4;
+}
+
+.gallery .titlepage {
+    text-align: center;
+}
+
+.gallery .gallery_img {
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+}
+
+
+.pro-loop {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    background: #fff;
+    margin-bottom: 30px;
+}
+.product-img .product-sale {
+    position: absolute;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px 10px;
+    font-weight: bold;
+    z-index: 9;
+    border: 1px solid #ededed;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    color: #f94c43;
+}
+.box-pro-detail {
+    z-index: 9;
+    width: 100%;
+    margin-left: 15px;
+}
+.box-pro-detail h3 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    position: relative;
+    min-height: 18px;
+}
+.box-pro-detail h3 a {
+    line-height: 16px;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    color: black;
+    text-decoration: none;
+}
+.pro-price {
+    color: #f94c43;
+    font-size: 14px;
+    margin: 0;
+}
+.pro-price .pro-price-del {
+    color: #939393;
+    font-size: 13px;
+    margin-left: 5px;
+}
+.fader{
+    display: inline-block;
+}
+.fader img:last-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.fade img{
+    height: 250px; 
+    width: 250px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+.image-sale{
+    height: 250px; 
+    width: 250px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+.main-footer {
+    padding: 40px 85px 30px 85px;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;    
+}
+/* .text-footer{
+  margin-left: 75px;
+} */
+.bottom-footer {
+    padding: 20px 0;
+    background-color: #f5ab1e;
+}
+.bottom-footer ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+.bottom-footer ul>li a{
+    list-style-type: none;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background-color: #fff;
+    margin-right: 5px;
+    padding: 6px 8px;
+    padding-left: 6px;
+    
+}
+.bottom-footer .social-media a{
+    float: right;
+    padding: 8px 7px 2px 7px;
+    color:  #f5ab1e;
+    /* justify-items: right; */
+}
+.news-letter {
+    max-width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.news-letter .subscribe-content .contact-form {
+    text-align: center;
+}
+.news-letter .subscribe-content input {
+    height: 45px;
+    border: none;
+    padding: 12px 15px;
+    position: relative;
+}
+.news-letter .subscribe-content button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    height: 100%;
+    background-color: yellowgreen;
+    color: white;
+}
+.subscribe-content{
+    position: relative;
+}

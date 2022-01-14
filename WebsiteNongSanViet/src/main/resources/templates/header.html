@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Orfarm Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/home.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
+        <!-- Bootstrap CSS -->
+        <!--====== Favicon Icon ======-->
+
+        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" href="@{/assets/css/bootstrap.min.css}">
+
+        <!--====== Fontawesome css ======-->
+        <link rel="stylesheet" href="@{/assets/css/font-awesome.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/animate.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/magnific-popup.css}">
+
+        <!--====== Slick css ======-->
+        <link rel="stylesheet" href="@{/assets/css/slick.css}">
+
+        <!--====== Default css ======-->
+        <link rel="stylesheet" href="@{/assets/css/custom-animation.css}">
+        <link rel="stylesheet" href="@{/assets/css/default.css}">
+
+        <!--====== Style css ======-->
+        <link rel="stylesheet" href="@{/assets/scss/style.css}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    </head>
+    <body>
+        <header th:if ="${customer != null}" class="header"  th:fragment="myheader" >
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar ">
+                <div class="container-fluid">
+
+                    <!-- Brand -->
+                    <a class="navbar-brand waves-effect" href="/"  target="_self">
+                        <img style="height: 54px;"  src="https://lh3.googleusercontent.com/GDD9CYOIp3O-8yzWFhm0gizZAKT-TITcMlLr7T3bjYopY6iJCNIBogZodmc_xje_LBkXcK7yx0i4lihqwlj5YbhzSaFXnl1ltQBYSvevyTOVR7j07-yqXxf1exrgiHo9w34OE7HjALc0XSXIfnY-BUCYofq2k1CrPoR35vLrmEN4n8g3BW-QSmifyE3pDy4m3BE_Y5Y2iZ_5zHIdDhR7ftzWwCiuMtvuyYF1wOSrOgfFLcJBmV8edRWOErzHl0cLaxi4vize2mrP6tIRrWzJwOfWZ8JdE22jwkrySLSYN608UfIwKuTDxgqLHfqVO3aVhWFpAhw4UEkUuOD8NIgwtOV1QV90HeLjCSTtBhINRUGrSFKNaeIom9w8-JJDN8fZk7sg9bC9TBZdL8Pyz-44cg8oYEePMel7hM8QCJcHlIwu5gzoRelkoxZ05zRFVM5WaFw7Bct103g5qC0MigpfvlN5_IlTeoe0MUj_SDTraya6sWEqit-xao1cY_-2vrmXfzVdOxR5XKBnBHQ0572N_QIK4s_TSBlqx1DcBEdYPQ55m-j8s1I_F8LZ1mIwUHN5w4M0Q8-Hyt0GgBRO3_CXnrkN2sLDxJFS-3_VZbgTrumzOTWNRc4Wl3CkN8JvofkA_nyoTw9g88BNiwM5MN5S5cRWsD5lckqF1wrp4AxJFriu30DD05o0xYkNGEFW8zVn91Fuc1_yjZSle27U-FFPye5l=w283-h87-no?authuser=0" alt="">
+                    </a>
+
+                    <!-- Collapse -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Links -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <!-- Left -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active" style="padding-left: 40px;">
+                                <a class="nav-link waves-effect  text-header" href="/" target="_self">Trang chủ
+
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link waves-effect text-header dropdown-toggle"
+                                       href="" target="_blank">Giới thiệu
+
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-collection">
+                                        <a class="dropdown-item" href="/information">Về chúng tôi</a>
+                                        <a class="dropdown-item" href="/license">Giấy chứng nhận</a>
+                                        <a class="dropdown-item" href="./recruit.html">Tuyển dụng</a>
+                                        <a class="dropdown-item" href="./policy.html">Chính sách bảo mật</a>
+                                        <a class="dropdown-item" href="./condition.html">Điều khoản dịch vụ</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link waves-effect text-header dropdown-toggle"
+                                       href="./shop.html" target="_blank">Cửa hàng
+
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-collection">
+                                        <a class="dropdown-item" href="/category_vegetable">Rau củ sạch</a>
+                                        <a class="dropdown-item" href="/category_fruit">Hoa quả</a>
+                                        <a class="dropdown-item" href="/category_typeOfNut">Các loại hạt</a>
+                                        <a class="dropdown-item" href="/category_spFood">Đặc sản vùng miền</a>
+                                        <a class="dropdown-item" href="/category_rice">Gạo</a>
+                                        <a class="dropdown-item" href="/category_other">Sản phẩm khác</a>
+                                    </div>
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect text-header" href="./blog.html" >Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect text-header" href="./contact.html" >Liên hệ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect text-header" href="/order-history" >Xem thêm</a>
+                            </li>
+                        </ul>
+
+                        <!-- Right -->
+
+                        <ul class="navbar-nav nav-flex-icons">
+                            <li class="nav-item ">
+                                <a href="#"  class="nav-link cart-btn amm-shopping-cart-open"><i onclick="shoppingCarts()" class="fas fa-shopping-cart"></i>
+                                    <span class="quantity-amm-shopping-cart-open">0</span></a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" >
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/logout" class="nav-link border border-light rounded waves-effect" target="_self">
+                                    <i class="fas fa-user"></i> Đăng Xuất
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <header th:unless="${customer != null}" class="header"  th:fragment="myheader" >
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar ">
+                <div class="container-fluid">
+
+                    <!-- Brand -->
+                    <a class="navbar-brand waves-effect" href="/"  target="_self">
+                        <img style="height: 54px;"  src="https://lh3.googleusercontent.com/GDD9CYOIp3O-8yzWFhm0gizZAKT-TITcMlLr7T3bjYopY6iJCNIBogZodmc_xje_LBkXcK7yx0i4lihqwlj5YbhzSaFXnl1ltQBYSvevyTOVR7j07-yqXxf1exrgiHo9w34OE7HjALc0XSXIfnY-BUCYofq2k1CrPoR35vLrmEN4n8g3BW-QSmifyE3pDy4m3BE_Y5Y2iZ_5zHIdDhR7ftzWwCiuMtvuyYF1wOSrOgfFLcJBmV8edRWOErzHl0cLaxi4vize2mrP6tIRrWzJwOfWZ8JdE22jwkrySLSYN608UfIwKuTDxgqLHfqVO3aVhWFpAhw4UEkUuOD8NIgwtOV1QV90HeLjCSTtBhINRUGrSFKNaeIom9w8-JJDN8fZk7sg9bC9TBZdL8Pyz-44cg8oYEePMel7hM8QCJcHlIwu5gzoRelkoxZ05zRFVM5WaFw7Bct103g5qC0MigpfvlN5_IlTeoe0MUj_SDTraya6sWEqit-xao1cY_-2vrmXfzVdOxR5XKBnBHQ0572N_QIK4s_TSBlqx1DcBEdYPQ55m-j8s1I_F8LZ1mIwUHN5w4M0Q8-Hyt0GgBRO3_CXnrkN2sLDxJFS-3_VZbgTrumzOTWNRc4Wl3CkN8JvofkA_nyoTw9g88BNiwM5MN5S5cRWsD5lckqF1wrp4AxJFriu30DD05o0xYkNGEFW8zVn91Fuc1_yjZSle27U-FFPye5l=w283-h87-no?authuser=0" alt="">
+                    </a>
+
+                    <!-- Collapse -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Links -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <!-- Left -->
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active" style="padding-left: 40px;">
+                                <a class="nav-link waves-effect  text-header" href="/" target="_self">Trang chủ
+
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link waves-effect text-header dropdown-toggle"
+                                       href="" target="_blank">Giới thiệu
+
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-collection">
+                                        <a class="dropdown-item" href="/information">Về chúng tôi</a>
+                                        <a class="dropdown-item" href="/license">Giấy chứng nhận</a>
+                                        <a class="dropdown-item" href="./recruit.html">Tuyển dụng</a>
+                                        <a class="dropdown-item" href="./policy.html">Chính sách bảo mật</a>
+                                        <a class="dropdown-item" href="./condition.html">Điều khoản dịch vụ</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link waves-effect text-header dropdown-toggle"
+                                       href="./shop.html" target="_blank">Cửa hàng
+
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-collection">
+                                        <a class="dropdown-item" href="/category_vegetable">Rau củ sạch</a>
+                                        <a class="dropdown-item" href="/category_fruit">Hoa quả</a>
+                                        <a class="dropdown-item" href="/category_typeOfNut">Các loại hạt</a>
+                                        <a class="dropdown-item" href="/category_spFood">Đặc sản vùng miền</a>
+                                        <a class="dropdown-item" href="/category_rice">Gạo</a>
+                                        <a class="dropdown-item" href="/category_other">Sản phẩm khác</a>
+                                    </div>
+                                </div>
+
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect text-header" href="./blog.html" >Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-effect text-header" href="./contact.html" >Liên hệ</a>
+                            </li>
+                        </ul>
+
+                        <!-- Right -->
+
+                        <!--                        <form action="SearchControl" method="Post">
+                                                    <input class="searchBox" type="text" name="txtSearch" size="15" required="">
+                                                    <input class="searchButton" type="submit" name="btnGo" value="Tìm kiếm">
+                                                </form>-->
+
+                        <ul class="navbar-nav nav-flex-icons">
+                            <li class="nav-item ">
+                                <a href="#"  class="nav-link cart-btn amm-shopping-cart-open"><i onclick="shoppingCarts()" class="fas fa-shopping-cart"></i>
+                                    <span class="quantity-amm-shopping-cart-open">0</span></a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" >
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/login" class="nav-link border border-light rounded waves-effect" target="_self">
+                                    <i class="fas fa-user"></i> Đăng Nhập
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+    </body>
+
+    <!--====== jquery js ======-->
+    <script src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="@{/assets/js/bootstrap.min.js}"></script>
+    <script src="@{/assets/js/popper.min.js}"></script>
+
+    <!--====== wow js ======-->
+    <script src="@{/assets/js/wow.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="@{/assets/js/jquery.counterup.min.js}"></script>
+    <script src="@{/assets/js/waypoints.min.js}"></script>
+
+    <!--====== TweenMax js ======-->
+    <script src="@{/assets/js/TweenMax.min.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="@{/assets/js/slick.min.js}"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+
+    <!--====== Main js ======-->
+    <script src="@{/assets/js/main.js}"></script>
+    <script src="@{/cart.js}"></script>
+    <script>
+        $('.amm-shopping-cart-open').on('click', function () {
+        $('.amm-shopping-cart-canvas').addClass('open')
+        $('.overlay').addClass('open')
+        });
+
+        $('.amm-shopping-cart-close').on('click', function () {
+        $('.amm-shopping-cart-canvas').removeClass('open')
+        $('.overlay').removeClass('open')
+        });
+        $('.overlay').on('click', function () {
+        $('.amm-shopping-cart-canvas').removeClass('open')
+        $('.overlay').removeClass('open')
+        });
+    </script>
+
+</html>

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Orfarm Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/home.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
+        <!-- Bootstrap CSS -->
+        <!--====== Favicon Icon ======-->
+        <link rel="shortcut icon" th:src="@{/assets/images/favicon.png}" type="image/png">
+
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+
+        <!--====== Fontawesome css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/animate.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/magnific-popup.css}">
+
+        <!--====== Slick css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/slick.css}">
+
+        <!--====== Default css ======-->
+        <link rel="stylesheet" th:href="@{/assets/css/custom-animation.css}">
+        <link rel="stylesheet" th:href="@{/assets/css/default.css}">
+
+        <!--====== Style css ======-->
+        <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    </head>
+    <body>
+        <header class="header"th:replace="header :: myheader"></header>
+
+        <section class="breadcrum">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb container">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Danh mục sản phẩm</li>
+                </ol>
+            </nav>
+        </section>
+        <div class="appie-shop-grid-area pt-100 pb-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 order-2 order-lg-1">
+                        <div class="appie-shop-sidebar">
+                            <div class="shop-price-filter">
+                                <h4 class="title">Lọc theo giá</h4>
+                                <form method="POST" action="priceFruit" >
+                                    <div class="price-range">
+                                        <input type="radio" name="product" id="" onclick="changeListPrice('SpecialFood', this)">
+                                        <label for="">all</label>
+                                        <br>
+                                        <input type="radio" name="product" id=""  onclick="changeListPrice('SpecialFood10_30', this)">
+                                        <label for="">10.000đ - 30.000đ</label>
+                                        <br>
+                                        <input type="radio" name="product" id=""  onclick="changeListPrice('SpecialFood30_50', this)">
+                                        <label for="">30.000đ - 50.000đ</label>
+                                        <br>
+                                        <input type="radio" name="product" id=""  onclick="changeListPrice('SpecialFood50_100', this)">
+                                        <label for="">50.000đ - 100.000đ</label> 
+                                        <br>
+                                        <input type="radio" name="product" id=""  onclick="changeListPrice('SpecialFood100_200', this)">
+                                        <label for="">100.000đ - 200.000đ</label>
+                                        <br>
+                                        <input type="radio" name="product" id="" onclick="changeListPrice('SpecialFoodbiger200', this)">
+                                        <label for="">> 200.000đ</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="shop-category-widget">
+                                <h4 class="title">Danh Mục Sản Phẩm</h4>
+                                <ul>
+                                    <li ><a href="/category_vegetable" >Rau củ sạch</a></li>
+                                    <li ><a href="/category_fruit">Hoa quả</a></li>
+                                    <li><a href="/category_typeOfNut">Các loại hạt</a></li>
+                                    <li class="fruit"><a href="/category_spFood">Đặc sản vùng miền</a></li>
+                                    <li ><a href="/category_rice">Gạo</a></li>
+                                    <li ><a href="/category_other">Sản phẩm khác</a></li>
+                                </ul>
+                            </div>
+                            <div class="shop-best-product-widget">
+                                <h4 class="title">Best Seller</h4>
+                                <div class="shop-product" th:each="item : ${randSpFood}">
+                                    <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
+                                        <div class="thumb">
+                                            <img th:src="${item.image}" alt="">
+                                        </div>
+                                        <div class="content">
+                                            <a href="./productdetail.html" th:text="${item.name}"></a>
+                                            <span th:text="${item.real_price}"</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div class="shop-tags-bar">
+                                <h4 class="title">Sản phẩm phổ biến</h4>
+                                <ul>
+                                    <li><a href="#">Chuối</a></li>
+                                    <li><a href="#">Thịt trâu</a></li>
+                                    <li><a href="#">Táo</a></li>
+                                    <li><a href="#">Gạo</a></li>
+                                    <li><a href="#">Cà Phê</a></li>
+                                    <li><a href="#">Hạt Điều</a></li>
+                                    <li><a href="#">cải Bắp</a></li>
+                                    <li><a href="#">Cải Gồng</a></li>
+                                </ul>
+                            </div>
+                            <div class="shop-sidebar">
+                                <a href="./shop.html" class="image-hover">
+                                    <img src="https://lh3.googleusercontent.com/4Vt2rj-Wpl1is04ITbWd-Ki6OpJX2AhECoMl3d92pCEiBIQvx5hStCA2EYNH0WA4zo7qMCGa1AOLKe7u4zcn84FB4XbfL2vnzCqoe4IGppYuqAGHUc-JGseG75UyVqK5C81Rl94hrQmqsQwBot2pp8Fa0NPpKaYevbavK6YPZxQQiF2016gY2E-HUvRnVnUpcoFkC66zKKjmpWaWQuQpGyGw2QCEXzHK6zWQDFkuO6eW97GpWR9_KMZAu9P_HgpppqrHvm0FSbLSjsinO0L940R5X83UYBuh6-SwR8X3DVa64FK0Wp7LUfDVTFildwW9f-w7cI5NUGeaMErj5u1UtW60v89k7sWcL8vzUaICNNYBf97iEKAsVR3-2sZTarHJJEcPl1WKkH-59BmLuzOvNbtgeTrrZTaKzNa4T9eP7GlIgn09dt7vNWlclwP4cfMtkxYB8BYTy8TJt6z0kDNGadvALFivAWMZj_4akBtBY7mIh-OlIZ1NpdfWnXsknm4Nd5tRECJSoWxjy0HEvi-y3AAeCoGFEYjzljZwA7-FHFKcu6QuiHRkay3GjR0eKFD8BHcMBnNnDyjLQqWHgujydRq7_AZnZiCPCcYw4yhkhC1MI6ddAYUcmbAheIgPFqMdXtreQduECECNwzeYg31s32eucAQ2Xa-VDErEOeTlN8Y_FzEZ6jwj4rCmuXDJSMKu6DXEtHZ7xRBpQt6y1jIMAeef=w443-h512-no?authuser=0" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 order-1 order-lg-2">
+                        <div class="row">
+                            <div class="banner-collection pb-5 w-300">
+                                <img src="https://lh3.googleusercontent.com/-bykevsAkxyPh64je2WhMimvg0mwLDmJgc0HJQf99IL5YwdINP85ACLB7d3T-5T70llhP9sLWK_4PfU9goQC8n7Y6dJJodbUHJgmJVtvTeiS7BLlyyqSllYc0TOtcoKPv1UwnokOdDaQGUnD3iXo-P_S0jbXlb7-fxMgqDeLa9QMiR2DB1oH-1KXgVgzml1Z9LpQaKF0sz49NKWrpIKs5QP6w_3PJtC_CyNva02whrFYcqcaRF-WFR-uA9-FvKAk2Bh2s-4W7hj0YwMwd3Ucjo3dsgC0cSgm3B0ZlxtPgAg9wWFbBJpDvsElo6qs0n37sTYPXGak5PJ5yhh6o8Ekj2JwYFg1OHEo4S-Wg-Im1VIKkdh6DsLouC9sMMWKgVgbP7V0Aoh8mpnmgFzi7iJaDyzt7G9ArjAuzS_jXZ0FAhcxgH2S6PXuzhEKCVmovl3XGxUxFXuuQcDjqT7qN8-v5L7AMe09I6-cKf7KUrndM3Qzd_YTHT0CtnrjX8m1HIpPSjhUqzFGVVXd5p83TI5a8-MYyT6dl3TNsHioFsv7hb_BCAepGYveddTPhmM1Qhzd2qF5mX7oOeuRs-Gcidf4FoEYmMLAhKMU-Ll3VAvXfyHPkYUp67plvX93ch7DAzjpGdob3W0OMZoiYqcOFyhJnjQkIZiqEM_A4Y6MKGCdsQcL9rIwNGpkt8EqZ2tZGti4_DZK4Df3yNw2j0IaiKVXQtq3=w1090-h600-no?authuser=0"  height="262px" alt="">
+                            </div>
+                        </div>
+                        <div class="shop-grid-topbar d-flex justify-content-between align-items-center">
+                            <span></span>
+                            <select id="product">
+                                <option value="volvo">Mới nhất</option>
+                                <option value="saab">Bán chạy nhất</option>
+                                <option value="vw">Đánh giá tốt</option>
+
+                            </select>
+                        </div>
+                        <div id="SpecialFood">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6" th:each="item : ${category_spFood.pageList}">
+                                    <div  class="single-shop-box">
+                                        <div class="thumb text-center">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
+                                                <img th:src="${item.image}" alt="" class="card-img-top-230">
+                                                <div class="reborn">
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                            <div class="cart-list-icon">
+                                                <ul>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></i></a></li>
+                                                    <li><a href="#"><i class="far fa-eye"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star-half-alt"></i></li>
+                                            </ul>
+                                            <input type="hidden" id="productId"  th:value="${item.id}">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black" th:text="${item.name}"></a>
+                                            <div class="pricing">
+                                                <div class="discount-price" th:text="${(item.real_price)*(100- item.percent_discount)/100}"></div> 
+                                                <div class="regular-price" th:text="${item.real_price}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-12 col-md-6 mt-5">
+                                <ul class="pagination">
+                                    <li
+                                        th:class="${currentIndex == 1}? 'page-item disabled' : 'page-item'">
+                                        <a class="page-link" th:href="@{/category_fruit}">First</a>
+                                    </li>
+                                    <li
+                                        th:class="${currentIndex == 1}? 'page-item disabled': 'page-item' ">
+                                        <a class="page-link" aria-label="Previous"
+                                           th:href="@{|${baseUrl}${currentIndex - 1}|}"
+                                           title='Go to previous page'><span aria-hidden="true">«</span>
+                                            <span class="sr-only">Previous</span></a>
+                                    </li>
+                                    <li th:each="item : ${#numbers.sequence(beginIndex,endIndex)}"
+                                        th:class="${item == currentIndex ? 'page-item active' :'page-item' }">
+                                        <a class="page-link" th:href="@{|${baseUrl}${item}|}"> <span
+                                                th:text='${item}'>1</span>
+                                        </a>
+                                    </li>
+                                    <li
+                                        th:class="${currentIndex == totalPageCount}? 'page-item disabled': 'page-item'">
+                                        <a class="page-link" aria-label="Next"
+                                           th:href="@{|${baseUrl}${currentIndex + 1}|}" title='Go to next page'><span
+                                                aria-hidden="true">»</span> <span class="sr-only">Next</span></a>
+                                    </li>
+                                    <li
+                                        th:class="${currentIndex == totalPageCount}? 'page-item disabled':'page-item'">
+                                        <a class="page-link" th:href="@{|${baseUrl}${totalPageCount}|}">Last</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> 
+
+                        <div id="SpecialFood10_30" >
+                            <p  th:if ="${Fail_SpecialFood10_30}" style="text-align:center"> Không có sản phẩm nào phù hợp với yêu cầu của bạn</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6" th:each="item : ${SpecialFood10_30}">
+
+                                    <div  class="single-shop-box">
+                                        <div class="thumb text-center">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
+                                                <img th:src="${item.image}" alt="" class="card-img-top-230">
+                                                <div class="reborn">
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                            <div class="cart-list-icon">
+                                                <ul>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></i></a></li>
+                                                    <li><a href="#"><i class="far fa-eye"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star-half-alt"></i></li>
+                                            </ul>
+                                            <input type="hidden" id="productId"  th:value="${item.id}">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black" th:text="${item.name}"></a>
+                                            <div class="pricing">
+                                                <div class="discount-price" th:text="${(item.real_price)*(100- item.percent_discount)/100}"></div> 
+                                                <div class="regular-price" th:text="${item.real_price}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-bottom: 50px"></div>
+                        </div>
+
+                        <div id="SpecialFood30_50" >
+                            <p  th:if ="${Fail_SpecialFood30_50}" style="text-align:center"> Không có sản phẩm nào phù hợp với yêu cầu của bạn</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6" th:each="item : ${SpecialFood30_50}">
+
+                                    <div  class="single-shop-box">
+                                        <div class="thumb text-center">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
+                                                <img th:src="${item.image}" alt="" class="card-img-top-230">
+                                                <div class="reborn">
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                            <div class="cart-list-icon">
+                                                <ul>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></i></a></li>
+                                                    <li><a href="#"><i class="far fa-eye"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star-half-alt"></i></li>
+                                            </ul>
+                                            <input type="hidden" id="productId"  th:value="${item.id}">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black" th:text="${item.name}"></a>
+                                            <div class="pricing">
+                                                <div class="discount-price" th:text="${(item.real_price)*(100- item.percent_discount)/100}"></div> 
+                                                <div class="regular-price" th:text="${item.real_price}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div style="padding-bottom: 50px"></div>
+                        </div>
+
+                        <div id="SpecialFood50_100" >
+                            <p  th:if ="${Fail_SpecialFood50_100}" style="text-align:center"> Không có sản phẩm nào phù hợp với yêu cầu của bạn</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6" th:each="item : ${SpecialFood50_100}">
+
+                                    <div  class="single-shop-box">
+                                        <div class="thumb text-center">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
+                                                <img th:src="${item.image}" alt="" class="card-img-top-230">
+                                                <div class="reborn">
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                            <div class="cart-list-icon">
+                                                <ul>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></i></a></li>
+                                                    <li><a href="#"><i class="far fa-eye"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star-half-alt"></i></li>
+                                            </ul>
+                                            <input type="hidden" id="productId"  th:value="${item.id}">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black" th:text="${item.name}"></a>
+                                            <div class="pricing">
+                                                <div class="discount-price" th:text="${(item.real_price)*(100- item.percent_discount)/100}"></div> 
+                                                <div class="regular-price" th:text="${item.real_price}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div style="padding-bottom: 50px"></div>
+                        </div>
+
+                        <div id="SpecialFood100_200" >
+                            <p  th:if ="${Fail_SpecialFood100_200}" style="text-align:center"> Không có sản phẩm nào phù hợp với yêu cầu của bạn</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6" th:each="item : ${SpecialFood100_200}">
+
+                                    <div  class="single-shop-box">
+                                        <div class="thumb text-center">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
+                                                <img th:src="${item.image}" alt="" class="card-img-top-230">
+                                                <div class="reborn">
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                            <div class="cart-list-icon">
+                                                <ul>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></i></a></li>
+                                                    <li><a href="#"><i class="far fa-eye"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star-half-alt"></i></li>
+                                            </ul>
+                                            <input type="hidden" id="productId"  th:value="${item.id}">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black" th:text="${item.name}"></a>
+                                            <div class="pricing">
+                                                <div class="discount-price" th:text="${(item.real_price)*(100- item.percent_discount)/100}"></div> 
+                                                <div class="regular-price" th:text="${item.real_price}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div style="padding-bottom: 50px"></div>
+                        </div>
+
+                        <div id="SpecialFoodbiger200" >
+                            <p  th:if ="${Fail_SpecialFoodbiger200}" style="text-align:center"> Không có sản phẩm nào phù hợp với yêu cầu của bạn</p>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6" th:each="item : ${SpecialFoodbiger200}">
+
+                                    <div  class="single-shop-box">
+                                        <div class="thumb text-center">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
+                                                <img th:src="${item.image}" alt="" class="card-img-top-230">
+                                                <div class="reborn">
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                            <div class="cart-list-icon">
+                                                <ul>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li><a href="#"><i class="far fa-heart"></i></i></a></li>
+                                                    <li><a href="#"><i class="far fa-eye"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <ul>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star-half-alt"></i></li>
+                                            </ul>
+                                            <input type="hidden" id="productId"  th:value="${item.id}">
+                                            <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black" th:text="${item.name}"></a>
+                                            <div class="pricing">
+                                                <div class="discount-price" th:text="${(item.real_price)*(100- item.percent_discount)/100}"></div> 
+                                                <div class="regular-price" th:text="${item.real_price}"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div style="padding-bottom: 50px"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="amm-shopping-cart-wrapper">
+            <div class="amm-shopping-cart-canvas" id="amm-shopping-cart-canvas">
+                <div class="amm-shopping_cart">
+                    <div class="amm-shopping_cart-top-bar d-flex justify-content-between">
+                        <h6>Giỏ hàng</h6>
+                        <button onclick="removeShoppingCart()" class="amm-shopping-cart-close">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div><!-- shopping cart top bar -->
+                    <div class="amm-shopping_cart-list-items mt-30" id="showCart">
+                        <ul>
+
+                        </ul>
+                    </div> <!-- shopping_cart list items -->
+                    <div class="amm-shopping_cart-btn">
+                        <div class="total pt-35 d-flex justify-content-between">
+                            <h5>Tổng tiền:</h5>
+                            <p><span>0 </span><sup>đ</sup></p>
+
+                        </div>
+                        <div class="cart-btn pt-25">
+                            <a class="main-btn" onclick="viewCarts()" href="/viewCart">Xem giỏ hàng</a>
+                            <a class="main-btn main-btn-2" href="./payment.html">Thanh toán</a>
+                        </div>
+                    </div>
+                </div> <!-- shopping_cart -->
+            </div>
+            <div onclick="openOverlay()" class="overlay" id="overlay"></div>
+        </div>
+
+        <footer th:replace="footer :: myfooter"></footer>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!--====== jquery js ======-->
+    <script th:src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script th:src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script th:src="@{/assets/js/bootstrap.min.js}"></script>
+    <script th:src="@{/assets/js/popper.min.js}"></script>
+
+
+    <!--====== wow js ======-->
+    <script th:src="@{/assets/js/wow.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script th:src="@{/assets/js/jquery.counterup.min.js}"></script>
+    <script th:src="@{/assets/js/waypoints.min.js}"></script>
+
+    <!--====== TweenMax js ======-->
+    <script th:src="@{/assets/js/TweenMax.min.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script th:src="@{/assets/js/slick.min.js}"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script th:src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+
+    <!--====== Main js ======-->
+    <script  type="text/javascript"  th:src="@{/main.js}"></script>
+    <!--<script th:src="@{/assets/main.js}"></script>-->
+
+    <script th:src="@{/cart.js}"></script>
+    <script>
+                function changeListPrice(type, element) {
+                    console.log(type);
+                    document.getElementById(type).style.display = 'block';
+                    switch (type) {
+                        case 'SpecialFood':
+                            document.getElementById('SpecialFood10_30').style.display = 'none';
+                            document.getElementById('SpecialFood30_50').style.display = 'none';
+                            document.getElementById('SpecialFood50_100').style.display = 'none';
+                            document.getElementById('SpecialFood100_200').style.display = 'none';
+                            document.getElementById('SpecialFoodbiger200').style.display = 'none';
+                            break;
+                        case 'SpecialFood10_30':
+                            document.getElementById('SpecialFood').style.display = 'none';
+                            document.getElementById('SpecialFood30_50').style.display = 'none';
+                            document.getElementById('SpecialFood50_100').style.display = 'none';
+                            document.getElementById('SpecialFood100_200').style.display = 'none';
+                            document.getElementById('SpecialFoodbiger200').style.display = 'none';
+                            break;
+                        case 'SpecialFood30_50':
+                            document.getElementById('SpecialFood').style.display = 'none';
+                            document.getElementById('SpecialFood10_30').style.display = 'none';
+                            document.getElementById('SpecialFood50_100').style.display = 'none';
+                            document.getElementById('SpecialFood100_200').style.display = 'none';
+                            document.getElementById('SpecialFoodbiger200').style.display = 'none';
+                            break;
+
+                        case 'SpecialFood50_100':
+                            document.getElementById('SpecialFood').style.display = 'none';
+                            document.getElementById('SpecialFood10_30').style.display = 'none';
+                            document.getElementById('SpecialFood30_50').style.display = 'none';
+                            document.getElementById('SpecialFood100_200').style.display = 'none';
+                            document.getElementById('SpecialFoodbiger200').style.display = 'none';
+                            break;
+
+                        case 'SpecialFood100_200':
+                            document.getElementById('SpecialFood').style.display = 'none';
+                            document.getElementById('SpecialFood10_30').style.display = 'none';
+                            document.getElementById('SpecialFood30_50').style.display = 'none';
+                            document.getElementById('SpecialFood50_100').style.display = 'none';
+                            document.getElementById('SpecialFoodbiger200').style.display = 'none';
+                            break;
+                        case 'SpecialFoodbiger200':
+                            document.getElementById('SpecialFood').style.display = 'none';
+                            document.getElementById('SpecialFood10_30').style.display = 'none';
+                            document.getElementById('SpecialFood30_50').style.display = 'none';
+                            document.getElementById('SpecialFood50_100').style.display = 'none';
+                            document.getElementById('SpecialFood100_200').style.display = 'none';
+
+                            break;
+                    }
+                }
+
+    </script>
+
+</html>

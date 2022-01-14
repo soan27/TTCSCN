@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Orfarm Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/home.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
+        <!-- Bootstrap CSS -->
+        <!--====== Favicon Icon ======-->
+        
+        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" href="@{/assets/css/bootstrap.min.css}">
+
+        <!--====== Fontawesome css ======-->
+        <link rel="stylesheet" href="@{/assets/css/font-awesome.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/animate.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/magnific-popup.css}">
+
+        <!--====== Slick css ======-->
+        <link rel="stylesheet" href="@{/assets/css/slick.css}">
+
+        <!--====== Default css ======-->
+        <link rel="stylesheet" href="@{/assets/css/custom-animation.css}">
+        <link rel="stylesheet" href="@{/assets/css/default.css}">
+
+        <!--====== Style css ======-->
+        <link rel="stylesheet" href="@{/assets/scss/style.css}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    </head>
+    <body>
+
+        <header class="header"th:replace="header :: myheader"></header>
+
+        <section class="breadcrum" >
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb container">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Account</li>
+                </ol>
+            </nav>
+        </section>
+        <main role="main">
+            <section class="section-ptb customer-page register-page" style="padding-bottom: 80px;">
+                <div class="container">
+                    <div class="row log-acc-page register-acc-page pt-5 justify-content-center">
+                        <div class="col-lg-4 col-sm-12">                     
+                            <div class="acc-page">
+                                <div class="login">
+                                    <span class="has-error" th:text="${error}" style="color: red"></span>
+                                    <form th:action="@{/login}" th:object="${loginInfo}" method="post">
+                                        <div class="login-form-container" >
+                                            <div class="title-text ">
+                                                <h2>Đăng nhập</h2>
+                                                <p>Vui lòng điền thông tin vào bên dưới!!!</p>
+                                            </div>
+                                            <p th:if="${invalidCredentials}" class="errors"> Email và Password không hợp lệ </p>
+
+                                            <div class="form-group fill-form log-email">
+                                                <label for="exampleInputPassword1">Email</label>
+                                                <input type="email" th:field="*{email}" class="form-control" id="exampleInputPassword1" placeholder="Email" autofocus="autofocus" required>
+                                            </div>
+                                            <div class="form-group fill-form log-lastName">
+                                                <label for="exampleInputPassword1">Password</label>
+                                                <input type="password" th:field="*{password}" class="form-control" id="exampleInputPassword1" placeholder="Password" required minlength="6" maxlength="10">
+                                            </div>
+
+                                            <button type="submit" value="Submit" class="btn btn-primary btn-warning form-control" >Đăng nhập</button>
+                                            <div class="pt-3" >
+                                                <a href="./resetPass.html" style="color: #f5ab1e" id="recoverPass" type="reset" value="Reset">Quên mật khẩu?</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="col-lg-4 col-sm-12">  
+                            <div class="acc-page-2">
+                                <div class="side-form">
+                                    <div class="acc-title">
+                                        <h6>Bạn chưa có tài khoản? </h6>
+                                        <div class="account-option-action">
+                                            <a href="/register" id="customer_register">
+                                                Tạo tài khoản
+                                                <!-- <button type="button" class="btn btn-outline-warning"></button> -->
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="term-privacy">
+                                        <p class="term-con">
+                                            <span>
+                                                <sup>*</sup>
+                                            </span>
+                                            <a href="" target="_blank"> Điều khoản và điều kiện</a>
+                                        </p>
+                                        <p class="pri-pol ">
+
+                                            <span> Sự riêng tư và bảo mật của bạn không quan trọng đối với chúng tôi. Để
+                                                biết thêm thông tin về cách chúng tôi sử dụng dữ liệu của bạn, hãy đọc
+                                                điều khoản dưới đây.
+                                            </span>
+                                            <br>
+                                            <a href="" target="_blank" style="margin: 5px"> Chính sách điều khoản</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <footer th:replace="footer :: myfooter"></footer>
+    </body>
+     <!--====== jquery js ======-->
+    <script src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="@{/assets/js/bootstrap.min.js}"></script>
+    <script src="@{/assets/js/popper.min.js}"></script>
+
+    <!--====== wow js ======-->
+    <script src="@{/assets/js/wow.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="@{/assets/js/jquery.counterup.min.js}"></script>
+    <script src="@{/assets/js/waypoints.min.js}"></script>
+
+    <!--====== TweenMax js ======-->
+    <script src="@{/assets/js/TweenMax.min.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="@{/assets/js/slick.min.js}"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+
+    <!--====== Main js ======-->
+    <script src="@{/assets/js/main.js}"></script>
+    <script src="@{/assets/main.js}"></script>
+</html>

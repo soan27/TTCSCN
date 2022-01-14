@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Orfarm Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/home.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
+        <!-- Bootstrap CSS -->
+        <!--====== Favicon Icon ======-->
+        
+        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" href="@{/assets/css/bootstrap.min.css}">
+
+        <!--====== Fontawesome css ======-->
+        <link rel="stylesheet" href="@{/assets/css/font-awesome.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/animate.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/magnific-popup.css}">
+
+        <!--====== Slick css ======-->
+        <link rel="stylesheet" href="@{/assets/css/slick.css}">
+
+        <!--====== Default css ======-->
+        <link rel="stylesheet" href="@{/assets/css/custom-animation.css}">
+        <link rel="stylesheet" href="@{/assets/css/default.css}">
+
+        <!--====== Style css ======-->
+        <link rel="stylesheet" href="@{/assets/scss/style.css}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    </head>
+    <body>
+        <header class="header"th:replace="header :: myheader"></header>
+
+        <section class="breadcrum" >
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb container">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </section>
+        <main role="main">
+            <div class="container">
+                <div class="row blog-infor">
+                    <div class="col-lg-8">
+                        <h3>Tin Tức</h3>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/fr95wyDdSONHOHhokMhYHkUO_SDzKgYd1zR1kbPOcjhT3xGH4DuX1A8GcEHFQVgMkdyWIp5X6ZgNpxAc6XA6Xcfbj6KSekQEokh3IBm53dANXrzpi3FYTkZj5C0DuSNMQs88nrSAhxRNmJ-BQxz8uZ5Wg0SYztaVK37oNa03_xTaL5RvAujH1YwC4skaFyVE4YWFQxjHccJ07FXe7XxEqB1nYhAfkYlX5GzMT32cR3oFQe8NbBfcFLmEu5LiH_ld-Xc0UcN6cqjI8MDdeEDVSF5QMEHuhqf87UWzoxJHSVem8AWNB9HptSupqp6VvwJZgGMIaeVUR2rn7u5RwtJCjGqmaIL0hxonL6QfbShJciz3651QOQ472iJAYH1p9OAN-b5DNBtGmO6GL9tkVH6NW79atc7QnYjUhvJm6s8JYEKBnhmw3aKrC46-CANLXRgNpEXqmHg-e7UkHfsJmP6bQk8108ccHx6CobepebdybszzmJyR6XTfUD4N4xnSSyhmBnN_uoZ04VGXvZZFGzrzwcFr1CCzxoMUvZRB1A7sUtuB_2PC9GHnOA_OHHMUJ4BWaWn6G32GIkWSG6iCx5zl1DIC0wFtG1r_0d_DIpLn-pcDa1ylLBDlTK2BVyXuYeexzH1vjLyzjFBtANUtFW2tW5Tro0ex7ct8nHKhbKyduDsn4P_mxYl9e53S_W164WCmLzrWjcW63klaRih9fxj5a0BV=w1354-h903-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i> 22, 07, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html">5 lợi ích tuyệt vời của thực phẩm hữu cơ đem lại cho người dùng, người nông dân và môi trường.</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/GgqPJSggRwDFS4pSojlxhFLi_B7W_m0ua3i77a0REJo2fyX2tFeSYeDDeIuF6Mzgua4UTclakbRZWMwEzQdjHzK4Jgm-NhxqSY7Wp8Fe4h9MfsTy0yIoQubf8ikeXBm4kGY6JlLWlaD-zPDv705NXRyoRU8lOlUaBO8HMMqBFycExHuPW62ZWduM-vgd758phA1qx2W-I1YZofKPe0_Oe7Y0pJTEAxsVLX1i2kTQ0gD1cYU__lOtwMTJEnYsuE8JgMlQHFF2fT9bQLzi7CC-ahvhM9DZ1k_rauFthHgZ_6XWAza849FMt-sP44KL1wb5Utx_3xg6vp-tOpnJQnGvkCe2Y3LdlhyvvUxcovxMnh5jBZdge6iVj6CCULcLvNNddmbRpVU5WTKTP92rfl4ysBS-DSMB7rLOBPMGehjG1nxcXj-Oq6mGNLN3eCKjSu56iE1Q7SH7_T9Dbzh-BcDf7sp1rybJbNEh93DGkUEEyzQ98FIqc-jgPVwzQ5d51V-5GUSRagY72FXnNmoD_tMwz24iBd4fc-JWcKdn_KKDDNzg_PTQmlGupR9mYNUEJlMDtIjUL069whFNLT4NljGP1We7ORmA4xsnT--eLDZS0OhXydocLIxQZyotenIXdNyg6YHnQPhsO4xk7bIrLih_cruUmX8uYiowiRubfz389tNnCUtPS9lKBRrXcjIDytwzl2_CEfa3CBa39PPiK45fugo-=w370-h270-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i>07, 05, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html">Bệnh tiểu đường: Những nguyên tắc trong chế độ ăn và thực phẩm phù hợp</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/uQSLU1zKAEK33RGDueZZ4x8F8W_oaU19nT-eb6obIOOoFgB8F7GiFvgvjps8mn1pcFl-LLA9sGneSFRcu1o4yIasCQwCqmVRrFZwol9KHdZWU8u9nZWoU9Gpz_CU8vKs-ijV13Mt3A1OxHBMRm3fVf_DKHSRnyIZuVrFSZJzidAFGggCImYljlCUc3DgIkQj8XsG5ujl7wPU2QBzBISpZezEIId16O8KI980qtWpGd4-oqK-K9oELuzYk7VSzHbRcaD5wiqMqWXP6r3SuXQPDREWMc9XmGmHYHoQ0owTg6jS2MIh2E6RTOds1E6n2BKVMm_lKmaaPBGGuzQY_NL4Jq6CRaIa8vKuRprIAkFg-eZeJmmQmro3iVMiK741-pnf1Qcf6etj13vo5nDelhvN5sJrZMYtpz4SKy4PSnZSEQtH6vPm0t6zzD4D8-4y_FHbHDlMGi4JCbtMZ4yGLMmpbhL2GHbUBi9ertF8WPb22mnUtDomTPqJwhKnmSY3CpsdcFW2QDCQOUJDlyPVsBxuEEkKy7iubSwhaEZ-YRrnfeA1Ene9jBMlIMIdGQq-VPM2iPqzPx7hxKX_nftFIKb6kpdoVudHKzr36g1alDSfLdXqfuofbPm3S4w1UUpspBO8-f5-hOuans09vMAp6oxqHGwpZZxR_pTnoXks9Qo3tfaEnWl3mNmvXO0sL11UWFcElbBUHk9vNPFRufeG3ShUbinZ=w370-h270-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i>21, 08, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html"> Dưỡng ẩm làn da căng mọng bằng mặt nạ của những loại trái cây tự nhiên.</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/UzyUVnNxLnaOaS7W49fWyWftaTY15FGRDW_MtxJ3_WRYjYzp6TmFqLBeUl8IVA9l87mH-AAnHrQR3O6NnVLkM0NBypvfOGDn6_P6mWKG5WXSt7XylAdwOVOEnXyVRyc2q_dC52Zx17qvjyie3XKUyKD6aBMo2RtxNbgrca11PzZJ05_w7Eab3TCwtM0gIZ0PxX6BGBJtwst-40kEfeN78Uh815IXcFOmXPOp_nOLf7T379AKsVtzpJiGRlVefUtd34s1DDwvYO9aoMvIkQoLsd9S1dtDMGJmkMqRBdI8yfKsyfniWoNr2P9nPpGbYzDUH5UwdihQ1PlcO0kAg4aHe31e7Lmm1MLW2UGHio60YqPmmuG1GD5OYOWiEZib__uUP5qaEmltb_-1yJK56fDnxuw1m2j8tn4hmK01-QTqcQSyPtqjNHrn-XVAB1E5U89y_Um-N6tpm7kt0ISYhuuNO8V7Ae7CHRU2muGTL-eMWBD7t7JoE6bw1kq84R6_xoJAYwu0UWJyLURDPNIcUZqTgMR0-Dxj9mna9QO9zcuWRFyixJLP0aekLGj8cqo3R0-QqPqvb-M8hjRfsgoCvPb1-GtU1tbZGTxbEhBegVXDRYMUGvyexiDrhX7BkBPg3_6F1JLLqUQwEgHq1lABeVM4xftldoYdD0kzUDaPFVL7ZgInG0qGvhpusFi8BbwJrWlzoezSiRrdTwjKdl8s7yRKqtK2=w370-h270-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i>22, 11, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>5 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html">Tại sao ORFARM lại lựa chọn phương pháp bảo quản thịt là CẤP ĐÔNG?</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/L8OLOe-Q1Qm70PKMxe9xZgYjbpJ8kpavMQk3THTxPaMkvq2bRYB2wyjJAOBux73jZ2mbR-9eLr5WcwSTtAuY8-jy7s10XK3Iii-R43KnPG494mB7tsNRbuSUa4ODdvfzIT4LBlNZY3AABRce2Y7ubgfT9eAmyHkPF2eWUy-ZptpO4EB48SrNLyqG5evn8hTqHGLHSoC3dsrwdHJAWSVIdkhp-EAPiIH5wMjCF-rydTOJoqVzSOGWYj9Pvby1jCwjX5_OVFjaBvB3FyKJPI6uMGBq3vcTcbXcD9B-YbZ8vhnKeutSJQP2U8UPP2JiA1lXsZdygOEX5TxVgQd6Qy6vq_pWDE_2Ku407F1FLQPHOrLTrYIFEQ--jjR-5s2PwN7lh8Rc6WGx4On9ieieVW-gMW7D-EGz14DF810F0e4IZtW_CysWRs_o5U9f4bu2hp1v5CDsItlVPfilix2TTc62ZkTEsAAGSuzzMPVwZ0lIk70qyzVLaUFQ9U4EbXF8sMW9ZCBYpcmk4JTvTbMLSOGLfba0fq4233OlTPQc838LSIK7JedeocqYJX8CZWiZzv4jxqXm_q_ssqBCew-NVpAiR-lT9wZ4Agwo3htkOyRCE62cXEyEkbbVSsUIVnp-A0ArtToCpFtvA4iGcysnyBgWcdC42GaILHBn-Wj_FXqcu9sYQ3eiWR0Fl-hRxAA9ZmquapDIHZ3vKY_UPK-MAZkAuTfI=w370-h270-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i>24, 08, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>12 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html">Bệnh thiếu máu và những thực phẩm bổ sung sắt cho người thiếu máu.</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/586Jmzc065LSvlsTTC7_oc5kHKV5-99wjYAqCFx1YPBsZEyBDMk-fa4ThQHwfiABqe7y5Qj5uBLVJsWYq7smby1G2jzEssjT3_3_BhMhjGPYm-PKYAtMO6UF9lap9Lp116eYIwd2qvqdI8UHHqrVqZyqOjpr0sH7KScciH3LBMY2kOs2V4U4gd-ob3JYif30lUyj-2E5nHugaMz3G-qemGT2JDNVAo80jrLIKW0hGqM1Sl1a1a9MWO9cft_45fU97Xg_q-SWSDNL50vB-B6vmLEN4_fkOg-kU9QO4QtI1wYR0qgZwHWWuBhONv8RSEpi7IZiS5NhK9lajZj3UmsbOsCf0FyyxxzvTp7jWVSVx20vrw_llKnomqoU2jgwFbsGlox3HwCsc53mn3Hu8guK5If_TZDUItz5skgJWkJC6zCR5b18zaBbrXVcrJUppTZ8_zK4LUUEyCCcnBv4K5-vQmyx2-63VmLpmm_I-kqudb2wUwy2MGzj12GH47nAi4_2NOXReVakbPrcl2M3qtiK23RwNQAaIQJf_sFmoLVEmuTR7A8uvrAkKOzgvDURQd1lpV3XlovGJuYkHcb6_2p8u_5R0grCZb2dIs3htUSg_0v0p03ua9jGMkaMyrVYI06vWc0GJ-Y6T3ESf15xBPNA48235288VCxDXMaLw6YH4qVuiWymm29dv4bbh6aTqdjng33jF2OtKjvJfsxXmbBDZDdp=w370-h270-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i>01, 10, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html">Thực phẩm hữu cơ không chỉ người giàu mới mua được</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/l1AOf8OTucxXnH72qhv-QCZ_tLS5NQv6W54oxSK3CQqrsqZvQwZ5dMgLSCUwgpFL8EV2Lmldp6MhaWiXbp5wRruyZ9ocX86E7z0CCL2QAhMbFjW_iPnae-bWXvtOYNcWRqWWFeRPmzcg2v2yCUbizEg7O5p8yhGaNKFtWvAdZ5KJxTDvqTJhFzxGuUQAPBT34ADVdz0EMyhb4LnQMG8Gi7ROD0jt9nCbvcIC_86D881qH2niGE1sFRsbrFMwaBCnnowA7y0xou4KR9UgX8gM3LUW-lvOoEH4A4TtN-6ZKJbeXW4trMxbUzJO0MESZ51aSnczbGWzW5UDqYOzHUNl4XKRD9-aeTfDRZfj_KWU6AdrSN8qJpEMG-p1EU1o-1hIhEYQndHNj-5J22N9uOzxQpOI-v9F4d5iirGHfOo2jErhn6NA8Fx-9IglBJY3zmPx8opB7LkWzQS4U0lhW5ZZvJuNpgMQzwd6gY9GEf_LlTSEjOxVxdPHrX3Heog_wyaSMRcdCZb1rn1epSBK0UIzgXMqcJFuXpBKUHzD8xa05Q3rLZ5Gn8nIFL6HDXnEQQVJ8b7AeJZgYDiKAp-Xx_TawolBKXAFyr7Gbta3E8Md_URYw01K35v2oHENz91P0fqi4j52XmnWAihDZYqRixyozvChgaHWAFKEBR7b9zamT_3VO_jEVpadGkXoPqW1NobO0qzAUeya5_WmDmvmGXlD0bwd=w370-h270-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i>19, 02, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>10 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html">Những thực phẩm nên ăn trong hè này.</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-6">
+                                <div class="post-item-1">
+                                    <img src="https://lh3.googleusercontent.com/UxzErJ5zz7Bwouwpn-7cRPeQxFK2W9wo3mLmYiXNtlAsxFFq19uFs7_dEAJWFkm44MOzxXJtiqTvl9PnkRMPGt2Y4rBwWjShwl7NiwzYPdnJvz9LVWhd_Q5rey1tTuwrJF2DZy-E6pNiBe3qWxkMXABopUS6f7PYgh3UezRC4WdAC2oJUZCwvQ__eHF4OKbdfG268yP6HdjKufpNnF2ST-Dld6C4aWxuhLne23ykqudgGyUCVWt1baij1gCSCKAskeJCA6KljptAUbgBgu_vM9x-9yfaKPht8VZ6RFLaFMnoQXHeWEqryX-Cy1VyAY7P2avAsKPUdT3uAO8hP7xqSEgtEO0kof_k6NCnBJJjb6vXc9Pt7Q85t1CMTNiJed17RWp6ANNTcFvoSOKPPQ5NctV9a01UK4RwClQ5UraPezai7kR3PQY8eb26rrtZCTHUWIOk31_gKx6l-DQL-nTu0otYfJ3dPhzBIsF2G-YXtqmnjFakPPwlCvJ1u8mcwvyQXjHWl747-bq-55mKCEAxbJCoID8Tjij6wC-P4TLPPV09UBdtwlE3nq72XASRzBg9AxFiwcRr7ds6DuFMl1j_99qAEBhT1P-bemU95bIocOku0TerACDBcK3Gs5BbucFizv0iWshc-3ZPczHbCYXM97Om-WU7SwBMzbqEkCto2rbJq8gsm0wo9P_solDLEH9MkVOiUTQxkKYolYl4wEOXzAkj=w370-h270-no?authuser=0" alt="">
+                                    <div class="b-post-details">
+                                        <div class="bp-meta">
+                                            <a href="#"><i class="fal fa-clock"></i>06, 06, 2021</a>
+                                            <a href="#"><i class="fal fa-comments"></i>6 Comments</a>
+                                        </div>
+                                        <h3><a href="single-post.html">"Bốn “siêu thực phẩm” nhất định phải ăn trong mùa hè".</a></h3>
+                                        <a class="read-more" href="single-post.html">Đọc thêm<i class="fal fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="bisylms-pagination">
+                                            <span class="current">01</span>
+                                            <a href="#">02</a>
+                                            <a class="next" href="#">next<i class="fal fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar">
+                            <aside class="widget widget-search">
+                                <form class="search-form" action="#" method="post">
+                                    <input type="search" name="s" placeholder="Search...">
+                                    <button type="submit"><i class="fal fa-search"></i></button>
+                                </form>
+                            </aside>
+                            <aside class="widget widget-categories">
+                                <h3 class="widget-title">Tin tức</h3>
+                                <ul>
+                                    <li><a href="#">Giải đáp thắc mắc: Thực phẩm hữu cơ luôn ngon và đẹp hơn thực phẩm thông thường?</a></li>
+                                    <li><a href="#">Bọt trắng đục nổi trên mặt nồi canh hầm xương thực chất là gì và có nên vớt bỏ không?</a></li>
+                                    <li><a href="#">Top 10 những cửa hàng thực phẩm hữu cơ và thực phẩm sạch uy tín ở Hà Nội</a></li>
+                                    <li><a href="#">Tại sao ORFARM lại lựa chọn phương pháp bảo quản thịt là CẤP ĐÔNG?</a></li>
+                                    <li><a href="#">13 thực phẩm tốt cho sức khỏe tim mạch</a></li>
+                                    <li><a href="#">Top 8 Cửa hàng thực phẩm hữu cơ uy tín ở TP. Hồ Chí Minh</a></li>
+                                    <li><a href="#">Dưỡng ẩm làn da căng mọng bằng mặt nạ của những loại trái cây tự nhiên</a></li>
+                                </ul>
+                            </aside>
+                            <aside class="widget widget-trend-post">
+                                <h3 class="widget-title">Bài đăng phổ biến</h3>
+                                <div class="popular-post">
+                                    <a href="single-post.html"><img src="./image/news1.jpg" alt=""></a>
+                                    <h5><a href="single-post.html">Thực phẩm hữu cơ là gì?</a></h5>
+                                    <span>March 19, 2021</span>
+                                </div>
+                                <div class="popular-post">
+                                    <a href="single-post.html"><img src="./image/news2.jpg" alt=""></a>
+                                    <h5><a href="single-post.html">5 lợi ích của thực phẩm hữu cơ đem lại</a></h5>
+                                    <span>Jan 14, 2021</span>
+                                </div>
+                                <div class="popular-post">
+                                    <a href="single-post.html"><img src="./image/new2.png" alt=""></a>
+                                    <h5><a href="single-post.html">Những lưu ý khi cho trẻ sử dụng nước ép trái</a></h5>
+                                    <span>April 12, 2021</span>
+                                </div>
+                                <div class="popular-post">
+                                    <a href="single-post.html"><img src="./image/news4.png" alt=""></a>
+                                    <h5><a href="single-post.html">Làm sao để con chịu uống nước ép rau củ?</a></h5>
+                                    <span>July 4, 2021</span>
+                                </div>
+                            </aside>
+                            <aside class="widget">
+                                <h3 class="widget-title">Thẻ tìm kiếm</h3>
+                                <div class="tags">
+                                    <a href="#">Thực phẩm</a>
+                                    <a href="#">Sức khỏe</a>
+                                    <a href="#">Chăm sóc da</a>
+                                    <a href="#">Uy tín</a>
+                                    <a href="#">Sạch</a>
+                                    <a href="#">Trẻ em</a>
+                                    <a href="#">Người già</a>
+                                    <a href="#">OrFarm</a>
+                                    <a href="#">Mặt nạ</a>
+                                    <a href="#">Hữu cơ</a>
+                                </div>
+                            </aside>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+
+    <!--====== jquery js ======-->
+    <script src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
+    <script src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+
+    <!--====== Bootstrap js ======-->
+    <script src="@{/assets/js/bootstrap.min.js}"></script>
+    <script src="@{/assets/js/popper.min.js}"></script>
+
+    <!--====== wow js ======-->
+    <script src="@{/assets/js/wow.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="@{/assets/js/jquery.counterup.min.js}"></script>
+    <script src="@{/assets/js/waypoints.min.js}"></script>
+
+    <!--====== TweenMax js ======-->
+    <script src="@{/assets/js/TweenMax.min.js}"></script>
+
+    <!--====== Slick js ======-->
+    <script src="@{/assets/js/slick.min.js}"></script>
+
+    <!--====== Magnific Popup js ======-->
+    <script src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+
+    <!--====== Main js ======-->
+    <script src="@{/assets/js/main.js}"></script>
+    <script src="@{/assets/main.js}"></script>
+</html>

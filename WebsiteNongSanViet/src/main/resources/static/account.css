@@ -1,0 +1,194 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 19, 2021, 7:00:08 PM
+    Author     : Hoang Xoan
+*/
+/* login */
+.section-ptb .col{
+    padding: 30px;
+    height: 500px;
+    width: 300px;
+    float: left;
+    display: block;
+    margin: 0 145px;
+    /* display: flex;
+    justify-content: space-around;*/
+} 
+.section-ptb .col .login-form-container ul, .acc-reset ul{
+    list-style-type: none;
+}
+ .section-ptb .login-form-container input{
+    padding: 10px 15px;
+    background-color: #fff;
+    font-size: 13px;
+    color: #bbb;
+    /* margin: 5px 5px; */
+    width: 100%;
+    height: 42px;
+ }
+ .section-ptb .login-form-container{
+     text-align: left;
+     padding: 30px
+ }
+
+ .customer-page .login-form-container .title-text{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 25px;
+ }
+ .customer-page .login-form-container .title-text p{
+     margin-bottom: 30px;
+ }
+ .customer-page .login-form-container .log-email label,.customer-page .login-form-container .log-password label,
+ .log-resetEmail label, .acc-reset ul li
+ {
+     /* width: 308px; */
+     font-size: 15px;
+     margin-bottom: 5px;
+     width: 100%;
+ } 
+ .customer-page .login-form-container .log-email, .log-firstName, .log-lastName{
+    margin-bottom: 30px;
+ }
+ #input-full-email{
+     margin-bottom: 30px;
+ }
+.form-btn .btn{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.customer-page .login-form-container, .resetPass .acc-reset{
+    border: 1px solid #eee;
+    border-radius: 3px;
+}
+
+.login-form-container ul>li:last-child a, #HideRecoverPasswordLink{
+  color: #f5ab1e;
+  /* text-align: center; */
+  font-weight: 300;
+  display: flex;
+  margin-bottom: 15px;
+  text-decoration: none;
+  justify-content: space-evenly
+}
+.customer-page .side-form{
+    margin-left: 30px;
+    margin-top: 80px;
+}
+.customer-page .side-form .acc-title{
+    text-align: center;
+}
+.customer-page .side-form h6{
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.customer-page .log-acc-page{
+    display: flex;
+    justify-items: center;
+}
+.customer-page .acc-title .account-option-action a{
+    border: 2px solid #f5ab1e;
+    color: #f5ab1e;
+    padding: 10px 30px;
+    font-weight: 600;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+}
+
+.customer-page .acc-title .account-option-action a:hover{
+    background-color: rgb(235, 234, 217);
+}
+.customer-page .side-form .term-privacy p a{
+    color: #f5ab1e;
+    text-decoration: none;
+}
+.customer-page .side-form .term-privacy{
+    margin-top: 30px;
+    font-size: 13px;
+}
+.breadcrum{
+    margin-top: 70px;
+    background-color: #fafafa;
+}
+.breadcrumb{
+    background-color: transparent !important;
+}
+breadcrumb-item .active{
+    color: #f5ab1e transparent;
+}
+.breadcrumb-item a{
+    color: black;
+    list-style-type: none;
+}
+.errors{
+  color: #d02e2e;
+    border: 1px solid;
+    margin-bottom: 15px;
+    font-size: 13px;
+    text-align: left;
+    background-color: #fff6f6;
+    padding: 8px 12px;
+    border-radius: 3px;
+    height: 40px;
+}
+.breadcrumb-item.active {
+  color: #f5ab1e !important;
+}
+
+/* media */
+/* @media screen and (max-width: 991px){
+    .customer-page .log-acc-page {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 1199px){
+    .customer-page .log-acc-page {
+        max-width: 70%;
+    }
+} */
+/* resetpassword */
+.resetPass .acc-reset{
+  height: 400px;
+  width: 418px;
+  padding: 30px;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  align-items: center;
+  /* justify-content: center; */
+  max-width: 60%;
+  margin: 40px auto;
+
+}
+.login-reset ul{
+  padding-left: 0;
+}
+.reset-title{
+  text-align: center;
+  padding-top: 25px;
+
+}
+.reset-title h2{
+  font-weight: 600;
+
+}
+.reset-title p{
+  line-height: 15px;
+  padding-top: 15px;
+}
+.acc-reset ul li:last-child{
+  margin-top: 10px;
+}
+/* createaccount */
+.register-page{
+  margin-bottom: 50px !important;
+}

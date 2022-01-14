@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Orfarm Store</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" th:href="@{/home.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
+        <!-- Bootstrap CSS -->
+        <!--====== Favicon Icon ======-->
+        
+        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+
+        <!--====== Bootstrap css ======-->
+        <link rel="stylesheet" href="@{/assets/css/bootstrap.min.css}">
+
+        <!--====== Fontawesome css ======-->
+        <link rel="stylesheet" href="@{/assets/css/font-awesome.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/animate.min.css}">
+
+        <!--====== Magnific Popup css ======-->
+        <link rel="stylesheet" href="@{/assets/css/magnific-popup.css}">
+
+        <!--====== Slick css ======-->
+        <link rel="stylesheet" href="@{/assets/css/slick.css}">
+
+        <!--====== Default css ======-->
+        <link rel="stylesheet" href="@{/assets/css/custom-animation.css}">
+        <link rel="stylesheet" href="@{/assets/css/default.css}">
+
+        <!--====== Style css ======-->
+        <link rel="stylesheet" href="@{/assets/scss/style.css}">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    </head>
+    <body>
+        <button type="button" onclick="back()"><i class="fas fa-arrow-left"></i></button>
+        <h1 style="text-align: center">Manage Product</h1>
+        <div th:if="${successProd}"
+             class="row alert alert-succes alert-dismissible">
+            <span th:text="${successProd}"></span>    
+        </div>
+
+        <a  href="/addProd"class="btn btn-success"> Add Product</a>
+        <table class="table table-striped" style="border: 1px solid">
+            <tr>
+                <th style="width:50px">Id</th>
+                <th style="width:100px">Name</th>
+                <th style="width: 150px"> Brief Description </th>
+                <th style="width: 150px;">Description</th>
+                <th style="width: 100px;">cateId</th>
+                <th style="width: 150px;">Real Price</th>
+                <th style="width: 100px;">Sale Price</th>
+                <th style="width: 100px;">Quantity Product</th>
+                <th style="width: 150px;">Is Hot</th>
+                <th>Image</th>
+                <!--<th>Edit</th>-->
+                <th></th>
+            </tr>
+
+            <tr th:each="product: ${listProduct}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.name}"></td>
+                <td th:text="${product.brief_desc}"></td>
+                <td th:text="${product.desc}"></td>
+                <td th:text="${product.cateId}"></td>
+                <td th:text="${product.real_price}"></td>
+                <td th:text="${product.percent_discount}"></td>
+                <td th:text="${product.quantityProd}"></td>             
+                <td th:text="${product.isHot}"></td>                
+                <td><img width="100px" th:src="${product.image}"/></td>
+                <!--<td th:src="${product.image}" width="40" height="40"></td>-->
+                <td>
+                    <a href="" class="btn btn-primary"> Edit</a>
+                    <a href="" class="btn btn-danger">Del</a>
+                </td>
+
+            </tr>
+
+        </table>
+        <script>
+            function back() {
+                history.back();
+            }
+        </script>
+    </body>
+</html>
