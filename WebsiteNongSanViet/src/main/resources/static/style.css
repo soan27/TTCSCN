@@ -8244,6 +8244,7 @@ blockquote cite {
 .condition-check {
     position: relative;
     margin: 10px 0 0;
+    padding-bottom: 15px;
 }
 
 .condition-check input[type="checkbox"] {
@@ -8732,6 +8733,10 @@ blockquote cite {
     display: flex;
 }
 
+.shop-buttons{
+    margin-top: 20px;
+}
+
 .shop-buttons .product-quantity {
     border: 2px solid #e7eaef;
     display: inline-block;
@@ -8921,6 +8926,8 @@ blockquote cite {
 
 .shop-details-info-area {
     background: #eef1f6;
+    margin-top: 65px;
+    margin-bottom: 100px;
 }
 
 .shop-details-box .nav {
@@ -8943,11 +8950,14 @@ blockquote cite {
     color: #2b70fa;
     border-bottom: 2px solid #2b70fa;
 }
+.shop-description{
+    padding-bottom: 20px;
+}
 
-.shop-description p {
+.shop-description span {
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 24px;
 }
 

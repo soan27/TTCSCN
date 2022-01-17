@@ -152,11 +152,11 @@ and open the template in the editor.
 
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Ghi chú:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
                         <div class="success-order row pb-5 ">
                             <button type="button" class="btn-buy btn btn-success mt-2 ml-3">Đặt hàng</button>
-                            <a href="./ViewCart.html" class="back">Quay lại</a>
+                            <a href="/viewCart" class="back">Quay lại</a>
                         </div>
                         <div class="right">
                             <p>Mọi sự riêng tư và thông tin của bạn đều được chúng tôi bảo mật.</p>
@@ -166,7 +166,7 @@ and open the template in the editor.
                         <div class="payment-left-display pr-80">
                             <div class="showProduct">
                                 <ul id="mainCartPayment">
-                                   
+
 
                                 </ul>
                             </div>
@@ -179,15 +179,18 @@ and open the template in the editor.
 
                                 </div>
                             </div>
-                            <div class="sumPriceproduct">
-                                <p>Tạm tính: <span class="padding-price1">0 </span><sup>đ</sup></p>
-                                <p>Phí ship: <span class="padding-price2">0 </span><sup>đ</sup></p>
-                                <p>Giảm giá: <span class="padding-price3">0 </span><sup>đ</sup></p>
+                           
+                                <div class="sumPriceproduct">
+                                    <p>Tạm tính: <span class="padding-price1"  >0 </span><sup>đ</sup></p>
+                                    <p>Phí ship: <span class="padding-price2">0 </span><sup>đ</sup></p>
+                                    <p>Giảm giá: <span class="padding-price3" >0 </span><sup>đ</sup></p>
 
-                            </div>
-                            <div class="sumarizePrice ">
-                                <p>Tổng tiền: <span class="padding-price">0 </span><sup>đ</sup></p>
-                            </div>
+                                </div>
+
+                                <div class="sumarizePrice ">
+                                    <p>Tổng tiền: <span class="padding-price">0 </span><sup>đ</sup></p>
+                                    
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -228,7 +231,7 @@ and open the template in the editor.
     <!--<script th:src="@{/assets/main.js}"></script>-->
 
     <script th:src="@{/cart.js}"></script>
-      <script type="text/javascript">
+    <script type="text/javascript">
         window.onload = function ()
         {
             showProductToPayment();

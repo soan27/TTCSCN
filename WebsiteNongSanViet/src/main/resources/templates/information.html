@@ -14,29 +14,30 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
         <!-- Bootstrap CSS -->
         <!--====== Favicon Icon ======-->
-        <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+        <!--<link rel="shortcut icon" th:src="../assets/images/favicon.png" type="image/png">-->
 
-        <!--====== Bootstrap css ======-->
-        <link rel="stylesheet" href="@{/assets/css/bootstrap.min.css}">
+        <!--====== Bootstrap css ======-->  
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 
         <!--====== Fontawesome css ======-->
-        <link rel="stylesheet" href="@{/assets/css/font-awesome.min.css}">
+        <link rel="stylesheet" href="../../font-awesome.min.css" type="text/css">
 
         <!--====== Magnific Popup css ======-->
-        <link rel="stylesheet" href="@{/assets/css/animate.min.css}">
+        <link rel="stylesheet" href="../../animate.min.css" type="text/css">
 
         <!--====== Magnific Popup css ======-->
-        <link rel="stylesheet" href="@{/assets/css/magnific-popup.css}">
+        <link rel="stylesheet" href="../../magnific-popup.css" type="text/css">
 
         <!--====== Slick css ======-->
-        <link rel="stylesheet" href="@{/assets/css/slick.css}">
+        <link rel="stylesheet" href="../../slick.css"  type="text/css">
 
         <!--====== Default css ======-->
-        <link rel="stylesheet" href="@{/assets/css/custom-animation.css}">
-        <link rel="stylesheet" href="@{/assets/css/default.css}">
+        <link rel="stylesheet" href="../../custom-animation.css" type="text/css">
+        <link rel="stylesheet" href="../../default.css " type="text/css">
 
         <!--====== Style css ======-->
-        <link rel="stylesheet" href="@{/assets/scss/style.css}">
+        <link rel="stylesheet" href="../styleN.css" type="text/css">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -245,31 +246,31 @@ and open the template in the editor.
         <footer th:replace="footer :: myfooter"></footer>
     </body>
 
-     <!--====== jquery js ======-->
-    <script src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
-    <script src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../modernizr-3.6.0.min.js"></script>
+    <script src="../../jquery-1.12.4.min.js"></script>
 
     <!--====== Bootstrap js ======-->
-    <script src="@{/assets/js/bootstrap.min.js}"></script>
-    <script src="@{/assets/js/popper.min.js}"></script>
+    <script src="../../bootstrap.min.js"></script>
+    <script src="../../popper.min.js"></script>
 
     <!--====== wow js ======-->
-    <script src="@{/assets/js/wow.js}"></script>
+    <script src="../../wow.js"></script>
 
     <!--====== Slick js ======-->
-    <script src="@{/assets/js/jquery.counterup.min.js}"></script>
-    <script src="@{/assets/js/waypoints.min.js}"></script>
+    <script src="../../jquery.counterup.min.js"></script>
+    <script src="../../waypoints.min.js"></script>
 
     <!--====== TweenMax js ======-->
-    <script src="@{/assets/js/TweenMax.min.js}"></script>
+    <script src="../../TweenMax.min.js"></script>
 
     <!--====== Slick js ======-->
-    <script src="@{/assets/js/slick.min.js}"></script>
+    <script src="../../slick.min.js"></script>
 
     <!--====== Magnific Popup js ======-->
-    <script src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+    <script src="../../jquery.magnific-popup.min.js"></script>
 
     <!--====== Main js ======-->
-    <script src="@{/assets/js/main.js}"></script>
-    <script src="@{/assets/main.js}"></script>
+    <script type="text/javascript" th:src="@{/main.js}"></script>
+    <script th:src="@{/cart.js}"></script>
 </html>

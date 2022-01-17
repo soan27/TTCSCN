@@ -164,7 +164,8 @@ and open the template in the editor.
                                             </a>
                                             <div class="cart-list-icon">
                                                 <ul>
-                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag" type="submit"></i></a></li>
                                                     <li><a href="#"><i class="far fa-heart"></i></i></a></li>
                                                     <li><a href="#"><i class="far fa-eye"></i></a></li>
                                                 </ul>
@@ -242,7 +243,7 @@ and open the template in the editor.
                                             </a>
                                             <div class="cart-list-icon">
                                                 <ul>
-                                                   <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
                                                     <li><a href="#"><i class="far fa-heart"></i></i></a></li>
                                                     <li><a href="#"><i class="far fa-eye"></i></a></li>
                                                 </ul>
@@ -326,7 +327,7 @@ and open the template in the editor.
                                             </a>
                                             <div class="cart-list-icon">
                                                 <ul>
-                                                   <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                                    <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
                                                     <li><a href="#"><i class="far fa-heart"></i></i></a></li>
                                                     <li><a href="#"><i class="far fa-eye"></i></a></li>
                                                 </ul>
@@ -359,7 +360,7 @@ and open the template in the editor.
                             <p  th:if ="${Fail_fruit100_200}" style="text-align:center"> Không có sản phẩm nào phù hợp với yêu cầu của bạn</p>
                             <div class="row">
                                 <div class="col-lg-4 col-md-6" th:each="item : ${fruit100_200}">
-                                     <div  class="single-shop-box">
+                                    <div  class="single-shop-box">
                                         <div class="thumb text-center">
                                             <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
                                                 <img th:src="${item.image}" alt="" class="card-img-top-230">
@@ -403,7 +404,7 @@ and open the template in the editor.
                                 <div class="col-lg-4 col-md-6" th:each="item : ${fruitbiger200}">
 
 
-                                     <div  class="single-shop-box">
+                                    <div  class="single-shop-box">
                                         <div class="thumb text-center">
                                             <a th:href="@{/product/{id} (id = ${item.id})}" style="text-decoration: none; color: black">
                                                 <img th:src="${item.image}" alt="" class="card-img-top-230">

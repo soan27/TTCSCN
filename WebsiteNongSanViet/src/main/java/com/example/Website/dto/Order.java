@@ -10,26 +10,42 @@ package com.example.Website.dto;
  * @author Hoang Xoan
  */
 public class Order {
-    private int id;
-    private int cusid;
-    private int status;
+    private int cusId;
+    private boolean status;
+    private int amount;
     private long totalprice;
-    private String time;
     public Order() {
     }
 
-    public Order(int id, int cusid, int status) {
-        this.id = id;
-        this.cusid = cusid;
+    public Order( int cusId, boolean status, int amount, long totalprice) {
+        this.cusId = cusId;
+        this.status = status;
+        this.amount = amount;
+        this.totalprice = totalprice;
+    }
+
+    public int getCusId() {
+        return cusId;
+    }
+
+    public void setCusId(int cusId) {
+        this.cusId = cusId;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public String getTime() {
-        return time;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public long getTotalprice() {
@@ -38,30 +54,6 @@ public class Order {
 
     public void setTotalprice(long totalprice) {
         this.totalprice = totalprice;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getCusid() {
-        return cusid;
-    }
-
-    public void setCusid(int cusid) {
-        this.cusid = cusid;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
     }
 
 }

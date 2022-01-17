@@ -10,7 +10,8 @@ package com.example.Website.dto;
  * @author Hoang Xoan
  */
 public class Admin {
-      private int id;
+
+    private int id;
     private String name;
     private String email;
     private String password;
@@ -57,5 +58,4 @@ public class Admin {
         this.password = password;
     }
 
-   
 }

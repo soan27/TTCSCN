@@ -18,7 +18,7 @@ and open the template in the editor.
         <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
 
         <!--====== Bootstrap css ======-->
-        <link rel="stylesheet" href="@{/assets/css/bootstrap.min.css}">
+        <!--<link rel="stylesheet" href="@{/assets/css/bootstrap.min.css}">-->
 
         <!--====== Fontawesome css ======-->
         <link rel="stylesheet" href="@{/assets/css/font-awesome.min.css}">
@@ -47,10 +47,14 @@ and open the template in the editor.
     <body>
         <header th:replace="header :: myheader"></header>
 
+        <div class="alert alert-success p-0 d-flex" role="alert" th:if="${success}">
+            <p style="margin: .5rem;" th:text="${success}"></p>
+            <!--                    <a class="btn btn-outline-success" href="/cart">Giỏ hàng</a>-->
+        </div>
         <section class="breadcrum">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb container">
-                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Danh mục sản phẩm</li>
                     <li class="breadcrumb-item active" aria-current="page">Sản phẩm</li>
                 </ol>
@@ -69,30 +73,17 @@ and open the template in the editor.
                                     </div>
                                 </div>
                             </div>
-                            <div class="shop-small-slider-active mt-10">
-                                <div class="item">
-                                    <img src="assets/images/shop-details-small-1.jpg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="assets/images/shop-details-small-2.jpg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="assets/images/shop-details-small-3.jpg" alt="">
-                                </div>
-                                <div class="item">
-                                    <img src="assets/images/shop-details-small-4.jpg" alt="">
-                                </div>
 
-                            </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="shop-product-details-content pl-70 mt-35">
+
                                 <span>Trong kho</span>
                                 <h2 class="title" th:text="${item.name}"></h2>
                                 <input type="hidden" id="productId"  th:value="${item.id}">
                                 <div class="pricing">
-                                    <div class="discount-price mr-15" th:text="${(item.real_price)*(100- item.percent_discount)/100}" style="padding: 10px"></div>
-                                    <div class="regular-price"th:text="${item.real_price} "></div>
+                                    <div class="discount-price mr-15" th:text="${(item.real_price)*(100- item.percent_discount)/100}+'đ'" style="padding: 10px"></div>
+                                    <div class="regular-price"th:text="${item.real_price} + 'đ'"></div>
                                 </div>
                                 <div class="review">
                                     <ul>
@@ -107,12 +98,20 @@ and open the template in the editor.
 
                                 <p th:text="${item.desc}"></p>
                                 <div class="shop-buttons d-block d-sm-flex align-items-center">
+                                    <!--                                    <form th:action="@{/cart_add/{id}(id=${item.id})}" th:with="sl='Số lượng'" class="w-100" method="post">-->
                                     <div class="product-quantity" id="quantity">
+
                                         <button type="button" id="sub" class="sub">-</button>
+                                        <!--<input class="form-control" id="quantity" name="quantity" type="number" th:value="${nowquantity}"/>--> 
                                         <input type="text" id="1" value="1" />
                                         <button type="button" id="add" class="add">+</button>
                                     </div>
-                                    <a class="main-btn ml-10" href="#">Thêm vào giỏ</a>
+                                    <!--@{|/buyProduct?code=${prodInfo.code}|}-->
+                                    <!--<a th:href="@{/cart_add/{id} (id = ${item.id})">Buy Now</a>-->
+                                    <a class="main-btn" style="margin-left: 10px" href="#" type="submit">Thêm vào giỏ</a>
+
+                                    <!--</form>-->
+
                                 </div> 
                                 <div class="details-info">
                                     <ul>
@@ -121,9 +120,13 @@ and open the template in the editor.
                                         <li><span>Tags:</span> Cải Bắp, Sạch, Rau </li>
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
-
+                        <a class="btn btn-outline-success" href="/viewCart">Giỏ hàng</a>
+                        <th:block th:if="${listcart}">
+                            <p th:text="${listcart.size}"></p>
+                        </th:block>
                     </div>
                 </div>
 
@@ -134,7 +137,7 @@ and open the template in the editor.
 
             <!--====== APPIE SHOP DETAILS PART ENDS ======-->
 
-            <div class="shop-details-info-area pt-85 pb-100 ">
+            <div class="shop-details-info-area">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
@@ -149,12 +152,10 @@ and open the template in the editor.
                                 </ul>
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                        <div class="shop-description">
-                                            <p>Trồng bắp cải tí hon rất dễ, là giống cải chịu được lạnh, rất thích hợp trồng trong vụ đông - xuân tại miền Bắc, Trung và Tây Nguyên. Nhiệt độ thích hợp nhất để trồng bắp cải tí hon là từ 15 cho tới 20 độ C.</p>
-                                            <p>Trồng bắp cải tí hon rất dễ, là giống cải chịu được lạnh, rất thích hợp trồng trong vụ đông - xuân tại miền Bắc, Trung và Tây Nguyên. Nhiệt độ thích hợp nhất để trồng bắp cải tí hon là từ 15 cho tới 20 độ C.</p>
-                                            <h4 class="title">Đóng gói và vận chuyển.</h4>
-                                            <p>Chiều cao cây khoảng 80cm, mỗi cây sẽ có từ 150 - 180 bắp. Bắp cải tí hon rất nhiều chất xơ, tốt cho sức khỏe.</p>
-                                            <p>Chiều cao cây khoảng 80cm, mỗi cây sẽ có từ 150 - 180 bắp. Bắp cải tí hon rất nhiều chất xơ, tốt cho sức khỏe.</p>
+                                        <div class="shop-description"  th:each="item : ${prod}">
+                                            <span></span>
+                                            <span th:text="${'- ' + item.brief_desc}"></span>
+                                            <span th:text="${'- '+item.desc}"></span>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -239,11 +240,11 @@ and open the template in the editor.
                                                         <textarea name="#" id="#" cols="30" rows="10" placeholder="Type you message"></textarea>
                                                     </div>
                                                     <div class="input-box">
-                                                        <div class="condition-check pb-15">
+                                                        <div class="condition-check">
                                                             <input id="terms-conditions" type="checkbox">
                                                             <label for="terms-conditions">Lưu tên, email và trang web của tôi trong trình duyệt này cho lần sau khi tôi nhận xét</label>
                                                         </div>
-                                                        <button class="main-btn" type="submit">Gửi đánh giá</button>
+                                                        <button class="main-btn"style="margin-bottom: 40px" type="submit">Gửi đánh giá</button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -263,7 +264,7 @@ and open the template in the editor.
 
             <div class="shop-related-area pt-90 pb-170">
                 <div class="container">
-                    <div class="row">
+                    <div class="row" >
                         <div class="col-lg-12">
                             <div class="appie-section-title text-center">
                                 <h3 class="appie-title">Các sản phẩm liên quan</h3>
@@ -271,43 +272,41 @@ and open the template in the editor.
                             </div>
                         </div>
                     </div>
-                    <!--                    <div class="row shop-related-product-slider-active">
-                                            <div class="col-lg-3 col-md-6" >
-                                                <div class="single-shop-box" th:each= "item : ${randProducts}">
-                                                    <div class="thumb text-center">
-                                                        <img th:src="${item.image}" alt="">
-                                                        <div class="reborn">
-                                                            <span>Sale</span>
-                                                        </div>
-                                                        <div class="cart-list-icon">
-                                                            <ul>
-                                                                <li><a href="#"><i class="fal fa-shopping-bag"></i></a></li>
-                                                                <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                                                                <li><a href="#"><i class="fal fa-eye"></i></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="content">
-                                                        <ul>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star"></i></li>
-                                                            <li><i class="fas fa-star-half-alt"></i></li>
-                                                        </ul>
-                                                        <a th:href="@{/product/{id} (id = ${item.id})}"  th:text="${item.name}" style="text-decoration: none; color: black" ></a>
-                                                        <div class="pricing">
-                                                            <div  th:text="${(item.real_price)*(100- item.percent_discount)/100} +'đ' "class="discount-price" > </div> 
-                                                            <div class="regular-price" th:text="${(item.real_price)} + 'đ"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                    
-                                        </div>-->
+
+                    <div class=" row shop-related-product-slider-active" >
+                        <div class="col-lg-3 col-md-6" th:each= "item1 : ${randProducts}" >
+                            <div class=" single-shop-box">
+                                <div class="thumb text-center">
+                                    <img th:src="${item1.image}" alt="" class="card-img-top-230">
+                                    <div class="cart-list-icon">
+                                        <ul>
+                                            <li class="shopping-bag"><a href="#"><i class="fas fa-shopping-bag"></i></a></li>
+                                            <li><a href="#"><i class="far fa-heart"></i></i></a></li>
+                                            <li><a href="#"><i class="far fa-eye"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <ul>
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star"></i></li>
+                                        <li><i class="fas fa-star-half-alt"></i></li>
+                                    </ul>
+                                    <input type="hidden" id="productId"  th:value="${item1.id}">
+
+                                    <div class="pricing">
+                                        <div class="discount-price" th:text="${(item1.real_price)*(100- item1.percent_discount)/100}"></div> 
+                                        <div class="regular-price" th:text="${item1.real_price}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-
         </main>
 
         <div class="amm-shopping-cart-wrapper">
@@ -372,8 +371,6 @@ and open the template in the editor.
 
     <!--====== Main js ======-->
     <script  type="text/javascript"  th:src="@{/main.js}"></script>
-    <!--<script th:src="@{/assets/main.js}"></script>-->
-
     <script th:src="@{/cart.js}"></script>
 
 </html>

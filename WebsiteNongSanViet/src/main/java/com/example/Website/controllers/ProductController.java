@@ -5,16 +5,21 @@
  */
 package com.example.Website.controllers;
 
-import com.example.Website.dto.Category;
 import com.example.Website.dto.Customer;
+import com.example.Website.dto.Cart;
 import com.example.Website.model.ProductModel;
 import com.example.Website.dto.Product;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.support.PagedListHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -24,7 +29,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  *
  * @author Hoang Xoan
  */
-@SessionAttributes("customer")
+@SessionAttributes({"nowquantity", "listcart", "ship_price", "totalcost", "currentpage","customer"})
 @Controller
 public class ProductController {
 
@@ -33,7 +38,7 @@ public class ProductController {
     private ProductModel prodModel;
     private int limit = 12;
     private int page = 1;
-    double ship_price = 30000;
+    int ship_price = 30000;
     private double totalcost;
 
     // detail product
@@ -42,17 +47,56 @@ public class ProductController {
 
         ProductModel prodModel = new ProductModel();
         List<Product> prod = prodModel.findById(Integer.parseInt(id));
-        System.out.println("prod" + prod.toString());
+//        System.out.println("prod" + prod.toString());
         model.addAttribute("prod", prod);
 
-        List<Product> randProducts = prodModel.getRandProduct(6);
+        List<Product> randProducts = prodModel.getRandProduct(4);
         model.addAttribute("randProducts", randProducts);
 
         return "ProductDetail";
 
     }
 
-    
+    @PostMapping("/cart_add/{id}")
+    public String carthandle(Model model, @PathVariable(name = "id") String id,
+            @ModelAttribute Cart cart, HttpSession session, RedirectAttributes ra, HttpServletResponse response) throws Exception {
+        ProductModel prodModel = new ProductModel();
+        List<Cart> listcart = null;
+        Customer cus = (Customer) session.getAttribute("customer");
+        List<Cart> list = (List<Cart>) session.getAttribute("listcart");
+//        if (list != null) {
+//            listcart = list;
+//        } else {
+//            listcart = new ArrayList<>();
+//        }
+//        if (session.getAttribute("totalcost") != null) {
+//            totalcost = (long) (session.getAttribute("totalcost"));
+//        } else {
+//            totalcost = 0;
+//        }
+        Product product = (Product) prodModel.findById(Integer.parseInt(id));
+        Cart c = new Cart();
+        c.setCustId(cus.getId());
+       c.setProductId(product.getId());
+        System.out.println(product.getId()+ "hello");
+//        c.setImage(product.getImage());
+//        c.setName(product.getName());
+
+        c.setQuantity(cart.getQuantity());
+//        c.setCost(cart.getCost());
+//        c.setTotalcost_id(c.getCost() * cart.getQuantity());
+
+//        totalcost += c.getTotalcost_id();
+        listcart.add(c);
+        model.addAttribute("ship_price", ship_price);
+        model.addAttribute("listcart", listcart);
+//        model.addAttribute("totalcost", totalcost);
+        model.addAttribute("nowquantity", 0);
+        ra.addFlashAttribute("success", "Thêm thành công");
+        return "redirect:/viewCart" ;
+
+    }
+
 //    @PostMapping("/search")
 //    public String search(Model model, @ModelAttribute Product product, RedirectAttributes reat) throws Exception {
 //        ProductModel prodModel = new ProductModel();
@@ -65,10 +109,7 @@ public class ProductController {
 //            return "redirect:/";
 //        }
 //    }
-    
-    
-
-    // danh mục hoa quả
+// danh mục hoa quả
     @RequestMapping("/category_fruit")
     public String category(Model model, HttpServletRequest request, RedirectAttributes redirect) {
         request.getSession().setAttribute("cateFruitList", null);

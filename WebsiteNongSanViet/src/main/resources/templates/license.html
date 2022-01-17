@@ -14,29 +14,30 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
         <!-- Bootstrap CSS -->
         <!--====== Favicon Icon ======-->
-        <link rel="shortcut icon" th:src="@{/assets/images/favicon.png}" type="image/png">
+        <!--<link rel="shortcut icon" th:src="../assets/images/favicon.png" type="image/png">-->
 
-        <!--====== Bootstrap css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+        <!--====== Bootstrap css ======-->  
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 
         <!--====== Fontawesome css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+        <link rel="stylesheet" href="../../font-awesome.min.css" type="text/css">
 
         <!--====== Magnific Popup css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/animate.min.css}">
+        <link rel="stylesheet" href="../../animate.min.css" type="text/css">
 
         <!--====== Magnific Popup css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/magnific-popup.css}">
+        <link rel="stylesheet" href="../../magnific-popup.css" type="text/css">
 
         <!--====== Slick css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/slick.css}">
+        <link rel="stylesheet" href="../../slick.css"  type="text/css">
 
         <!--====== Default css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/custom-animation.css}">
-        <link rel="stylesheet" th:href="@{/assets/css/default.css}">
+        <link rel="stylesheet" href="../../custom-animation.css" type="text/css">
+        <link rel="stylesheet" href="../../default.css " type="text/css">
 
         <!--====== Style css ======-->
-        <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
+        <link rel="stylesheet" href="../styleN.css" type="text/css">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -114,7 +115,7 @@ and open the template in the editor.
                             <div class="appie-single-counter mt-30 wow animated fadeInUp" data-wow-duration="2000ms" data-wow-delay="200ms">
                                 <div class="counter-content">
                                     <div class="icon">
-                                        <img src="assets/images/icon/counter-icon-1.svg" alt="">
+                                        <img src="../../counter-icon-1.svg">
                                     </div>
                                     <h3 class="title"><span class="counter-item">45</span>k+</h3>
                                     <p>Số lượng khách hàng theo dõi trên fanpage OrFarm.</p>
@@ -125,7 +126,8 @@ and open the template in the editor.
                             <div class="appie-single-counter mt-30 item-2 wow animated fadeInUp" data-wow-duration="2000ms" data-wow-delay="400ms">
                                 <div class="counter-content">
                                     <div class="icon">
-                                        <img src="assets/images/icon/counter-icon-2.svg" alt="">
+                                        <!--<img src="../assets/images/icon/counter-icon-2.svg" alt="">-->
+                                        <img src="../../counter-icon-2.svg">
                                     </div>
                                     <h3 class="title"><span class="counter-item">4</span>+</h3>
                                     <p>Đạt chứng chỉ trong 5 năm liên tiếp</p>
@@ -136,7 +138,7 @@ and open the template in the editor.
                             <div class="appie-single-counter mt-30 item-3 wow animated fadeInUp" data-wow-duration="2000ms" data-wow-delay="600ms">
                                 <div class="counter-content">
                                     <div class="icon">
-                                        <img src="assets/images/icon/counter-icon-3.svg" alt="">
+                                        <img src="../../counter-icon-3.svg">
                                     </div>
                                     <h3 class="title"><span class="counter-item">689</span>k+</h3>
                                     <p>Lượt khách hàng yêu thích các sản phẩm</p>
@@ -147,7 +149,7 @@ and open the template in the editor.
                             <div class="appie-single-counter mt-30 item-4 wow animated fadeInUp" data-wow-duration="2000ms" data-wow-delay="800ms">
                                 <div class="counter-content">
                                     <div class="icon">
-                                        <img src="assets/images/icon/counter-icon-4.svg" alt="">
+                                        <img src="../../counter-icon-4.svg">
                                     </div>
                                     <h3 class="title"><span class="counter-item">725</span>k+</h3>
                                     <p>Lượt mua hàng trong 5 năm qua.</p>
@@ -237,62 +239,6 @@ and open the template in the editor.
 
                 </div>
             </section>
-            <div class="amm-shopping-cart-wrapper">
-                <div class="amm-shopping-cart-canvas">
-                    <div class="amm-shopping_cart">
-                        <div class="amm-shopping_cart-top-bar d-flex justify-content-between">
-                            <h6>Giỏ hàng</h6>
-                            <button class="amm-shopping-cart-close">
-                                <i class="fas fa-times"></i>
-                            </button>
-                        </div><!-- shopping cart top bar -->
-                        <div class="amm-shopping_cart-list-items mt-30">
-                            <ul>
-
-                                <li>
-                                    <div class="amm-single-shopping-cart media">
-                                        <div class="cart-image">
-                                            <img src="assets/images/cart-2.jpg" alt="Cart">
-                                        </div>
-                                        <div class="cart-content media-body pl-15">
-                                            <h6><a href="#">Nho</a></h6>
-                                            <span class="quality">SL: 01</span>
-                                            <span class="price-discount">50.000đ</span>
-                                            <span class="price-close">60.000đ</span>
-                                            <a class="remove" href="#"><i class="fa fa-times"></i></a>
-                                        </div>
-                                    </div> <!-- single shopping cart -->
-                                </li>
-                                <li>
-                                    <div class="amm-single-shopping-cart media">
-                                        <div class="cart-image">
-                                            <img src="assets/images/cart-2.jpg" alt="Cart">
-                                        </div>
-                                        <div class="cart-content media-body pl-15">
-                                            <h6><a href="#">Nho</a></h6>
-                                            <span class="quality">SL: 01</span>
-                                            <span class="price-discount">50.000đ</span>
-                                            <span class="price-close">60.000đ</span>
-                                            <a class="remove" href="#"><i class="fa fa-times"></i></a>
-                                        </div>
-                                    </div> <!-- single shopping cart -->
-                                </li>
-                            </ul>
-                        </div> <!-- shopping_cart list items -->
-                        <div class="amm-shopping_cart-btn">
-                            <div class="total pt-35 d-flex justify-content-between">
-                                <h5>Tổng tiền:</h5>
-                                <p>240.000đ</p>
-                            </div>
-                            <div class="cart-btn pt-25">
-                                <a class="main-btn" href="./ViewCart.html">Xem giỏ hàng</a>
-                                <a class="main-btn main-btn-2" href="./payment.html">Thanh toán</a>
-                            </div>
-                        </div>
-                    </div> <!-- shopping_cart -->
-                </div>
-                <div class="overlay"></div>
-            </div>
             <section class="appie-blog-3-area appie-blog-6-area pt-5 pb-100">
                 <div class="container">
                     <div class="row">
@@ -308,7 +254,7 @@ and open the template in the editor.
                             <div class="appie-blog-item-3 appie-blog-item-6 mt-30">
 
                                 <div class="thumb">
-                                    <img src="./image/tiểu dg.jpg" alt="">
+                                    <img src="../../abc.jpg" alt="">
                                 </div>
                                 <div class="content">
                                     <h5 class="title"><a href="./News/news1.html">Bệnh tiểu đường: Những nguyên tắc trong chế độ ăn và thực phẩm phù hợp</a></h5>
@@ -324,7 +270,7 @@ and open the template in the editor.
                         <div class="col-lg-6">
                             <div class="appie-blog-item-3 appie-blog-item-6 mt-30">
                                 <div class="thumb">
-                                    <img src="./image/tiểu dg.jpg" alt="">
+                                    <img src="../../abc.jpg" alt="">
                                 </div>
                                 <div class="content">
                                     <h5 class="title"><a href="./News/news1.html">Bệnh tiểu đường: Những nguyên tắc trong chế độ ăn và thực phẩm phù hợp</a></h5>
@@ -341,7 +287,7 @@ and open the template in the editor.
                         <div class="col-lg-6">
                             <div class="appie-blog-item-3 appie-blog-item-6 mt-30">
                                 <div class="thumb">
-                                    <img src="./image/tiểu dg.jpg" alt="">
+                                    <img src="../../abc.jpg" alt="">
                                 </div>
                                 <div class="content">
                                     <h5 class="title"><a href="./News/news1.html">Bệnh tiểu đường: Những nguyên tắc trong chế độ ăn và thực phẩm phù hợp</a></h5>
@@ -358,7 +304,7 @@ and open the template in the editor.
                         <div class="col-lg-6">
                             <div class="appie-blog-item-3 appie-blog-item-6 mt-30">
                                 <div class="thumb">
-                                    <img src="./image/tiểu dg.jpg" alt="">
+                                    <img src="../../abc.jpg" alt="">
                                 </div>
                                 <div class="content">
                                     <h5 class="title"><a href="./News/news1.html">Bệnh tiểu đường: Những nguyên tắc trong chế độ ăn và thực phẩm phù hợp</a></h5>
@@ -386,28 +332,28 @@ and open the template in the editor.
     </body>
     <!--====== jquery js ======-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script th:src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
-    <script th:src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+    <script src="../../modernizr-3.6.0.min.js"></script>
+    <script src="../../jquery-1.12.4.min.js"></script>
 
     <!--====== Bootstrap js ======-->
-    <script th:src="@{/assets/js/bootstrap.min.js}"></script>
-    <script th:src="@{/assets/js/popper.min.js}"></script>
+    <script src="../../bootstrap.min.js"></script>
+    <script src="../../popper.min.js"></script>
 
     <!--====== wow js ======-->
-    <script th:src="@{/assets/js/wow.js}"></script>
+    <script src="../../wow.js"></script>
 
     <!--====== Slick js ======-->
-    <script th:src="@{/assets/js/jquery.counterup.min.js}"></script>
-    <script th:src="@{/assets/js/waypoints.min.js}"></script>
+    <script src="../../jquery.counterup.min.js"></script>
+    <script src="../../waypoints.min.js"></script>
 
     <!--====== TweenMax js ======-->
-    <script th:src="@{/assets/js/TweenMax.min.js}"></script>
+    <script src="../../TweenMax.min.js"></script>
 
     <!--====== Slick js ======-->
-    <script th:src="@{/assets/js/slick.min.js}"></script>
+    <script src="../../slick.min.js"></script>
 
     <!--====== Magnific Popup js ======-->
-    <script th:src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+    <script src="../../jquery.magnific-popup.min.js"></script>
 
     <!--====== Main js ======-->
     <script type="text/javascript" th:src="@{/main.js}"></script>

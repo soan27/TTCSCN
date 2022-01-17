@@ -13,6 +13,10 @@ public class LoginInfo {
 
     private String email;
     private String password;
+    
+    public LoginInfo(){
+        
+    }
 
     public LoginInfo(String email, String password) {
         this.email = email;

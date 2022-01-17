@@ -7,47 +7,42 @@ and open the template in the editor.
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Orfarm Store</title>
-        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" th:href="@{/home.css}"/>
         <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
-        <link rel="stylesheet" type="text/css" th:href="@{/phu.css}"/>
         <link rel="stylesheet" type="text/css" th:href="@{/account.css}"/>
-
-
         <!-- Bootstrap CSS -->
         <!--====== Favicon Icon ======-->
+        <!--<link rel="shortcut icon" th:src="../assets/images/favicon.png" type="image/png">-->
 
-        <link rel="shortcut icon" th:src="@{/assets/images/favicon.png}" type="image/png">
+        <!--====== Bootstrap css ======-->  
+        <link href="../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-        <!--====== Bootstrap css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
 
         <!--====== Fontawesome css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+        <link rel="stylesheet" href="../../font-awesome.min.css" type="text/css">
 
         <!--====== Magnific Popup css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/animate.min.css}">
+        <link rel="stylesheet" href="../../animate.min.css" type="text/css">
 
         <!--====== Magnific Popup css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/magnific-popup.css}">
+        <link rel="stylesheet" href="../../magnific-popup.css" type="text/css">
 
         <!--====== Slick css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/slick.css}">
+        <link rel="stylesheet" href="../../slick.css"  type="text/css">
 
         <!--====== Default css ======-->
-        <link rel="stylesheet" th:href="@{/assets/css/custom-animation.css}">
-        <link rel="stylesheet" th:href="@{/assets/css/default.css}">
+        <link rel="stylesheet" href="../../custom-animation.css" type="text/css">
+        <link rel="stylesheet" href="../../default.css " type="text/css">
 
         <!--====== Style css ======-->
-        <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
+        <link rel="stylesheet" href="../styleN.css" type="text/css">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
         <style>
             body {
                 background: url('https://ucarecdn.com/24e5e6a8-1a4d-49b0-bafc-a6f8ea2248a1/bgmain.jpg');
@@ -158,36 +153,33 @@ and open the template in the editor.
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <!--====== jquery js ======-->
-    <script th:src="@{/assets/js/vendor/modernizr-3.6.0.min.js}"></script>
-    <script th:src="@{/assets/js/vendor/jquery-1.12.4.min.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="../../modernizr-3.6.0.min.js"></script>
+    <script src="../../jquery-1.12.4.min.js"></script>
 
     <!--====== Bootstrap js ======-->
-    <script th:src="@{/assets/js/bootstrap.min.js}"></script>
-    <script th:src="@{/assets/js/popper.min.js}"></script>
-
+    <script src="../../bootstrap.min.js"></script>
+    <script src="../../popper.min.js"></script>
 
     <!--====== wow js ======-->
-    <script th:src="@{/assets/js/wow.js}"></script>
+    <script src="../../wow.js"></script>
 
     <!--====== Slick js ======-->
-    <script th:src="@{/assets/js/jquery.counterup.min.js}"></script>
-    <script th:src="@{/assets/js/waypoints.min.js}"></script>
+    <script src="../../jquery.counterup.min.js"></script>
+    <script src="../../waypoints.min.js"></script>
 
     <!--====== TweenMax js ======-->
-    <script th:src="@{/assets/js/TweenMax.min.js}"></script>
+    <script src="../../TweenMax.min.js"></script>
 
     <!--====== Slick js ======-->
-    <script th:src="@{/assets/js/slick.min.js}"></script>
+    <script src="../../slick.min.js"></script>
 
     <!--====== Magnific Popup js ======-->
-    <script th:src="@{/assets/js/jquery.magnific-popup.min.js}"></script>
+    <script src="../../jquery.magnific-popup.min.js"></script>
 
     <!--====== Main js ======-->
-    <script  type="text/javascript"  th:src="@{/main.js}"></script>
-    <!--<script th:src="@{/assets/main.js}"></script>-->
-
+    <script type="text/javascript" th:src="@{/main.js}"></script>
     <script th:src="@{/cart.js}"></script>
 
     <script>

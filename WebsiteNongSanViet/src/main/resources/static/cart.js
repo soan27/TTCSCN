@@ -590,7 +590,6 @@ function updateTotalMoney() {
 let btnPromotion = document.querySelector('.applyDiscount button');
 
 btnPromotion.addEventListener('click', function () {
-    debugger;
     updateTotalMoney();
 });
 
